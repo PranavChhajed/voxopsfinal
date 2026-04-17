@@ -23,14 +23,9 @@
 body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16px;line-height:1.6;min-height:100vh;}
 button{cursor:pointer;font-family:var(--font);}
 input,select,textarea{font-family:var(--font);}
+.screen{display:none;}.screen.active{display:block;}
 
-/* ═══ SCREENS ═══ */
-.screen{display:none;}
-.screen.active{display:block;}
-
-/* ════════════════════════════════════
-   LOGIN
-════════════════════════════════════ */
+/* ════ LOGIN ════ */
 #s-login{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#F5F0E8 0%,#EDE8DF 50%,#E4DDD0 100%);position:relative;overflow:hidden;}
 .login-bg-figures{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-around;align-items:flex-end;pointer-events:none;padding:0 2rem;}
 .login-wrap{background:var(--card);border-radius:20px;box-shadow:var(--shadow2);padding:3rem 2.5rem;width:420px;position:relative;z-index:1;border:1px solid var(--border);}
@@ -50,11 +45,8 @@ input,select,textarea{font-family:var(--font);}
 .mode-btn .mode-icon{font-size:1.5rem;}
 .btn-primary{width:100%;padding:0.9rem;background:var(--px);color:white;border:none;border-radius:var(--radius-sm);font-size:1rem;font-weight:600;letter-spacing:0.02em;transition:background .2s,transform .1s;}
 .btn-primary:hover{background:var(--px2);transform:translateY(-1px);}
-.btn-primary:active{transform:translateY(0);}
 
-/* ════════════════════════════════════
-   NAV / HEADER
-════════════════════════════════════ */
+/* ════ HEADER ════ */
 #app-header{background:var(--card);border-bottom:2px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:72px;position:sticky;top:0;z-index:200;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
 .header-logo{font-family:var(--pixel);font-size:0.75rem;color:var(--px);letter-spacing:1px;}
 .header-logo span{color:var(--px3);}
@@ -75,23 +67,18 @@ input,select,textarea{font-family:var(--font);}
 .mode-badge.personal{background:rgba(5,150,105,0.1);color:var(--green);}
 .mode-badge.team{background:rgba(79,70,229,0.1);color:var(--px);}
 
-/* ════════════════════════════════════
-   CHARACTER STRIP
-════════════════════════════════════ */
+/* ════ CHAR STRIP ════ */
 #char-strip{background:var(--bg2);border-bottom:2px solid var(--border);padding:0.75rem 2rem;display:flex;align-items:flex-end;gap:1.5rem;overflow-x:auto;scrollbar-width:none;}
 #char-strip::-webkit-scrollbar{display:none;}
 .char-item{display:flex;flex-direction:column;align-items:center;gap:5px;flex-shrink:0;}
 .char-fig{image-rendering:pixelated;animation:figBob 2.5s ease-in-out infinite;}
-.char-fig:nth-child(odd){animation-delay:.4s;}
 @keyframes figBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 .char-lvl{font-family:var(--pixel);font-size:0.3rem;padding:2px 5px;border-radius:3px;white-space:nowrap;}
 .char-lvl.me{background:var(--px);color:white;}
 .char-lvl.other{background:var(--bg3);color:var(--text3);border:1px solid var(--border);}
 .char-name{font-size:0.65rem;color:var(--text3);font-weight:500;}
 
-/* ════════════════════════════════════
-   BOARD
-════════════════════════════════════ */
+/* ════ BOARD ════ */
 #board-wrap{padding:1.5rem 2rem;}
 .board{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;max-width:1400px;margin:0 auto;}
 .col-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);}
@@ -103,15 +90,10 @@ input,select,textarea{font-family:var(--font);}
 .col-add-btn{width:28px;height:28px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;font-size:1.1rem;color:var(--text3);display:flex;align-items:center;justify-content:center;transition:all .2s;}
 .col-add-btn:hover{background:var(--px);color:white;border-color:var(--px);}
 .col-body{padding:0.75rem;display:flex;flex-direction:column;gap:0.5rem;flex:1;}
-
-/* add input row */
 .add-row{display:flex;gap:0.4rem;margin-bottom:0.25rem;}
-.add-row input{flex:1;padding:0.5rem 0.75rem;border:2px solid var(--border);border-radius:6px;font-size:0.875rem;outline:none;background:var(--bg);}
-.add-row input:focus{border-color:var(--px);}
-.add-row select{padding:0.5rem;border:2px solid var(--border);border-radius:6px;font-size:0.8rem;outline:none;background:var(--bg);color:var(--text2);}
+.add-row input,.add-row select{padding:0.5rem 0.75rem;border:2px solid var(--border);border-radius:6px;font-size:0.875rem;outline:none;background:var(--bg);}
+.add-row input:focus,.add-row select:focus{border-color:var(--px);}
 .add-ok{padding:0.5rem 0.75rem;background:var(--px);color:white;border:none;border-radius:6px;font-size:0.8rem;font-weight:600;}
-
-/* HABIT CARD */
 .habit-card{background:var(--card2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:0.7rem 0.75rem;display:flex;align-items:center;gap:0.6rem;transition:box-shadow .2s,border-color .2s;}
 .habit-card:hover{box-shadow:0 2px 8px rgba(0,0,0,0.08);border-color:var(--border2);}
 .hb-btns{display:flex;gap:3px;}
@@ -126,10 +108,7 @@ input,select,textarea{font-family:var(--font);}
 .hb-cat{font-size:0.68rem;background:rgba(79,70,229,0.08);color:var(--px);padding:1px 6px;border-radius:4px;font-family:var(--mono);}
 .del-btn{width:22px;height:22px;background:none;border:none;color:var(--text3);font-size:0.9rem;display:flex;align-items:center;justify-content:center;border-radius:4px;transition:all .2s;flex-shrink:0;}
 .del-btn:hover{background:rgba(220,38,38,0.1);color:var(--red);}
-
-/* DAILY CARD */
 .daily-card{background:var(--card2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:0.7rem 0.75rem;display:flex;align-items:center;gap:0.7rem;transition:all .2s;}
-.daily-card:hover{border-color:var(--border2);}
 .daily-card.done{opacity:0.55;}
 .daily-card.done .dl-name{text-decoration:line-through;color:var(--text3);}
 .dl-check{width:24px;height:24px;border:2px solid var(--yellow);border-radius:5px;background:transparent;display:flex;align-items:center;justify-content:center;font-size:0.75rem;flex-shrink:0;transition:all .2s;}
@@ -140,11 +119,9 @@ input,select,textarea{font-family:var(--font);}
 .dl-timer{font-size:0.72rem;color:var(--cyan);font-family:var(--mono);}
 .dl-streak{font-size:0.72rem;color:var(--orange);font-weight:600;}
 .dl-cat{font-size:0.68rem;background:rgba(8,145,178,0.08);color:var(--cyan);padding:1px 6px;border-radius:4px;font-family:var(--mono);}
-
-/* TODO CARD */
 .todo-card{background:var(--card2);border-left:4px solid;border-top:1px solid var(--border);border-right:1px solid var(--border);border-bottom:1px solid var(--border);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:0.7rem 0.75rem;display:flex;align-items:flex-start;gap:0.7rem;transition:all .2s;}
 .todo-card:hover{box-shadow:0 2px 8px rgba(0,0,0,0.07);}
-.todo-card.done{opacity:0.5;}
+.todo-card.done{opacity:0.5;border-color:rgba(99,102,241,0.2) !important;}
 .todo-card.done .td-name{text-decoration:line-through;}
 .todo-card.h{border-left-color:var(--red);}
 .todo-card.m{border-left-color:var(--yellow);}
@@ -164,21 +141,16 @@ input,select,textarea{font-family:var(--font);}
 .td-pri.l{background:rgba(8,145,178,0.1);color:var(--cyan);}
 .n8n-btn{font-size:0.68rem;padding:2px 7px;background:rgba(234,88,12,0.1);border:1px solid var(--orange);color:var(--orange);border-radius:4px;font-weight:600;transition:all .2s;}
 .n8n-btn:hover{background:rgba(234,88,12,0.2);}
-
-/* REWARD CARD */
 .reward-card{background:var(--card2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:0.7rem 0.75rem;display:flex;align-items:center;gap:0.7rem;transition:all .2s;}
-.reward-card:hover{border-color:var(--border2);}
 .r-cost{display:flex;align-items:center;gap:4px;flex-shrink:0;}
-.r-coin{width:18px;height:18px;background:var(--yellow);border-radius:50%;border:2px solid #B8860B;flex-shrink:0;}
+.r-coin{width:18px;height:18px;background:var(--yellow);border-radius:50%;border:2px solid #B8860B;}
 .r-amount{font-family:var(--pixel);font-size:0.38rem;color:var(--yellow);}
 .r-name{flex:1;font-size:0.875rem;font-weight:600;}
 .buy-btn{padding:0.35rem 0.75rem;background:var(--green);color:white;border:none;border-radius:6px;font-size:0.75rem;font-weight:700;white-space:nowrap;transition:all .2s;}
-.buy-btn:hover{background:#047857;transform:translateY(-1px);}
-.buy-btn:disabled{background:var(--bg3);color:var(--text3);cursor:not-allowed;transform:none;}
+.buy-btn:hover{background:#047857;}
+.buy-btn:disabled{background:var(--bg3);color:var(--text3);cursor:not-allowed;}
 
-/* ════════════════════════════════════
-   TEAM DASHBOARD
-════════════════════════════════════ */
+/* ════ TEAM ════ */
 #s-team{padding:1.5rem 2rem;}
 .team-wrap{max-width:1000px;margin:0 auto;}
 .team-section-title{font-size:1.1rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;}
@@ -201,47 +173,138 @@ input,select,textarea{font-family:var(--font);}
 .add-team-input:focus{border-color:var(--px);}
 .add-team-btn{padding:0.6rem 1rem;background:var(--px);color:white;border:none;border-radius:6px;font-size:0.875rem;font-weight:600;}
 
-/* ════════════════════════════════════
-   WORKFLOWS PAGE
-════════════════════════════════════ */
+/* ════ WORKFLOWS PAGE ════ */
 #s-workflows{padding:1.5rem 2rem;}
-.wf-wrap{max-width:900px;margin:0 auto;}
+.wf-wrap{max-width:1100px;margin:0 auto;}
 .wf-page-title{font-size:1.5rem;font-weight:700;margin-bottom:0.4rem;}
 .wf-page-sub{font-size:0.9rem;color:var(--text3);margin-bottom:2rem;}
-.wf-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin-bottom:1rem;box-shadow:var(--shadow);position:relative;overflow:hidden;}
+.wf-section{margin-bottom:2.5rem;}
+.wf-section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;}
+.wf-section-label{font-size:1rem;font-weight:700;display:flex;align-items:center;gap:0.6rem;}
+.wf-section-badge{font-size:0.68rem;font-weight:700;padding:3px 10px;border-radius:12px;text-transform:uppercase;}
+.wf-section-badge.active{background:rgba(5,150,105,0.1);color:var(--green);}
+.wf-section-badge.pending{background:rgba(217,119,6,0.1);color:var(--yellow);}
+.wf-section-badge.deployed{background:rgba(79,70,229,0.1);color:var(--px);}
+
+/* ── N8N LIGHT CANVAS (Lead Gen style) ── */
+.n8n-canvas-light{background:#f8f9ff;border:1.5px solid #d0d5f0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+.n8n-canvas-dark{background:#12182b;border:1.5px solid #2a3150;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow2);}
+.n8n-canvas-hdr{padding:0.65rem 1.25rem;display:flex;align-items:center;justify-content:space-between;}
+.n8n-canvas-light .n8n-canvas-hdr{background:#eef0fb;border-bottom:1px solid #d0d5f0;}
+.n8n-canvas-dark .n8n-canvas-hdr{background:#1a2040;border-bottom:1px solid #2a3150;}
+.n8n-canvas-hdr-title{font-size:0.78rem;font-weight:700;display:flex;align-items:center;gap:0.5rem;}
+.n8n-canvas-light .n8n-canvas-hdr-title{color:#3d40a0;}
+.n8n-canvas-dark .n8n-canvas-hdr-title{color:#c0c8ff;}
+.n8n-run-wf-btn{padding:0.3rem 0.8rem;color:white;border:none;border-radius:5px;font-size:0.7rem;font-weight:700;}
+.n8n-canvas-light .n8n-run-wf-btn{background:#4f46e5;}
+.n8n-canvas-dark .n8n-run-wf-btn{background:#6c47ff;}
+.n8n-canvas-body{padding:1.5rem 1rem;overflow-x:auto;}
+.n8n-canvas-body::before{display:none;}
+
+/* node row */
+.nf-row{display:flex;align-items:flex-start;gap:0;flex-wrap:nowrap;margin-bottom:1.5rem;}
+.nf-node{border-radius:10px;padding:0.55rem 0.7rem;min-width:110px;max-width:130px;flex-shrink:0;cursor:pointer;transition:box-shadow .2s,transform .15s;position:relative;}
+.nf-node:hover{transform:translateY(-2px);}
+.n8n-canvas-light .nf-node{background:#fff;border:1.5px solid #c8ccee;box-shadow:0 2px 8px rgba(79,70,229,0.08);}
+.n8n-canvas-light .nf-node:hover{box-shadow:0 4px 16px rgba(79,70,229,0.18);}
+.n8n-canvas-dark .nf-node{background:#1e2645;border:1.5px solid #2e3760;box-shadow:0 2px 10px rgba(0,0,0,0.3);}
+.n8n-canvas-dark .nf-node:hover{box-shadow:0 4px 20px rgba(108,71,255,0.25);}
+.nf-node-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:0.4rem;}
+.nf-node-name{font-size:0.62rem;font-weight:700;line-height:1.3;margin-bottom:2px;}
+.n8n-canvas-light .nf-node-name{color:#1a1f4a;}
+.n8n-canvas-dark .nf-node-name{color:#c8d0f0;}
+.nf-node-sub{font-size:0.52rem;line-height:1.3;}
+.n8n-canvas-light .nf-node-sub{color:#7880b0;}
+.n8n-canvas-dark .nf-node-sub{color:#6878a8;}
+/* connector */
+.nf-conn{display:flex;align-items:center;padding-top:28px;flex-shrink:0;}
+.nf-arr{width:32px;height:2px;position:relative;flex-shrink:0;}
+.n8n-canvas-light .nf-arr{background:#a0a8d8;}
+.n8n-canvas-dark .nf-arr{background:#3a4580;}
+.nf-arr::after{content:'';position:absolute;right:-1px;top:-4px;border-top:5px solid transparent;border-bottom:5px solid transparent;}
+.n8n-canvas-light .nf-arr::after{border-left:7px solid #a0a8d8;}
+.n8n-canvas-dark .nf-arr::after{border-left:7px solid #3a4580;}
+/* circle connector dot */
+.nf-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin:0 2px;align-self:center;margin-top:28px;}
+.n8n-canvas-light .nf-dot{background:#c8ccee;border:1.5px solid #a0a8d8;}
+.n8n-canvas-dark .nf-dot{background:#2e3760;border:1.5px solid #4a5080;}
+/* sub-nodes (dashed line hanging below) */
+.nf-sub-wrap{display:flex;flex-direction:column;align-items:center;margin-top:0.5rem;}
+.nf-dashed{width:1px;height:22px;border-left:2px dashed;margin:0 auto;}
+.n8n-canvas-light .nf-dashed{border-color:#b0b8e0;}
+.n8n-canvas-dark .nf-dashed{border-color:#3a4580;}
+.nf-sub-node{border-radius:50%;width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;}
+.n8n-canvas-light .nf-sub-node{background:#fff;border:1.5px solid #c8ccee;}
+.n8n-canvas-dark .nf-sub-node{background:#1a2040;border:1.5px solid #2a3150;}
+.nf-sub-label{font-size:0.5rem;margin-top:4px;font-weight:600;}
+.n8n-canvas-light .nf-sub-label{color:#5060a0;}
+.n8n-canvas-dark .nf-sub-label{color:#6878a8;}
+/* trigger lightning node */
+.nf-trigger{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;margin-top:4px;}
+.n8n-canvas-light .nf-trigger{background:#fff3e0;border:2px solid #f59e0b;}
+.n8n-canvas-dark .nf-trigger{background:#1a1a2e;border:2px solid #f59e0b;}
+/* condition node diamond shape */
+.nf-cond-tags{display:flex;flex-direction:column;gap:2px;margin-top:3px;}
+.nf-cond-tag{font-size:0.5rem;padding:1px 4px;border-radius:3px;font-weight:700;}
+.nf-tag-true{background:rgba(5,150,105,0.12);color:#059669;}
+.nf-tag-false{background:rgba(220,38,38,0.1);color:#dc2626;}
+
+/* lower row arrow going back up */
+.nf-loop-row{display:flex;align-items:flex-start;gap:0;padding-left:3.5rem;}
+
+/* deploy strip at bottom of canvas */
+.canvas-deploy-strip{padding:0.75rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-top:1px solid;}
+.n8n-canvas-light .canvas-deploy-strip{background:#eef0fb;border-color:#d0d5f0;}
+.n8n-canvas-dark .canvas-deploy-strip{background:#1a2040;border-color:#2a3150;}
+.canvas-deploy-info{font-size:0.72rem;}
+.n8n-canvas-light .canvas-deploy-info{color:#6870b0;}
+.n8n-canvas-dark .canvas-deploy-info{color:#6878a8;}
+.canvas-deploy-btn{padding:0.4rem 1.1rem;color:white;border:none;border-radius:6px;font-size:0.78rem;font-weight:700;transition:all .2s;}
+.n8n-canvas-light .canvas-deploy-btn{background:var(--orange);}
+.n8n-canvas-dark .canvas-deploy-btn{background:#6c47ff;}
+.canvas-deploy-btn:hover{opacity:0.88;transform:translateY(-1px);}
+.canvas-deploy-btn.deployed-state{background:var(--green)!important;cursor:default;}
+
+/* user-deployed wf cards */
+.wf-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin-bottom:0.75rem;position:relative;overflow:hidden;box-shadow:var(--shadow);}
 .wf-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--orange);}
-.wf-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;}
-.wf-title{font-size:1rem;font-weight:700;display:flex;align-items:center;gap:0.5rem;}
-.wf-status{font-size:0.72rem;font-weight:700;padding:3px 10px;border-radius:12px;text-transform:uppercase;}
-.wf-status.active{background:rgba(5,150,105,0.1);color:var(--green);}
-.wf-status.deployed{background:rgba(79,70,229,0.1);color:var(--px);}
-.wf-trigger-row{display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;padding:0.75rem 1rem;background:rgba(234,88,12,0.06);border:1px solid rgba(234,88,12,0.2);border-radius:8px;}
-.wf-trigger-label{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--orange);}
-.wf-trigger-val{font-size:0.875rem;font-family:var(--mono);color:var(--text);}
-.wf-actions-label{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--text3);margin-bottom:0.5rem;}
-.wf-actions-list{display:flex;gap:0.5rem;flex-wrap:wrap;}
-.wf-action-tag{display:flex;align-items:center;gap:0.4rem;padding:0.35rem 0.75rem;background:var(--bg2);border:1px solid var(--border);border-radius:6px;font-size:0.8rem;font-family:var(--mono);}
-.wf-action-tag .wf-act-dot{width:6px;height:6px;background:var(--px);border-radius:50%;}
-.wf-meta{margin-top:1rem;padding-top:0.75rem;border-top:1px solid var(--bg2);font-size:0.75rem;color:var(--text3);font-family:var(--mono);}
-.wf-empty{text-align:center;padding:4rem 2rem;color:var(--text3);}
-.wf-empty-icon{font-size:3rem;margin-bottom:1rem;}
-.wf-empty-title{font-size:1.1rem;font-weight:700;color:var(--text2);margin-bottom:0.5rem;}
+.wf-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;}
+.wf-title{font-size:0.95rem;font-weight:700;display:flex;align-items:center;gap:0.5rem;}
+.wf-status{font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:10px;text-transform:uppercase;}
+.wf-status.deployed{background:rgba(5,150,105,0.1);color:var(--green);}
+.wf-trigger-row{display:flex;align-items:center;gap:0.6rem;padding:0.6rem 0.9rem;background:rgba(234,88,12,0.06);border:1px solid rgba(234,88,12,0.2);border-radius:7px;margin-bottom:0.75rem;}
+.wf-trigger-label{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--orange);}
+.wf-trigger-val{font-size:0.82rem;font-family:var(--mono);color:var(--text);}
+.wf-actions-label{font-size:0.68rem;font-weight:700;text-transform:uppercase;color:var(--text3);margin-bottom:0.4rem;}
+.wf-actions-list{display:flex;gap:0.4rem;flex-wrap:wrap;}
+.wf-action-tag{display:flex;align-items:center;gap:0.3rem;padding:0.3rem 0.65rem;background:var(--bg2);border:1px solid var(--border);border-radius:5px;font-size:0.78rem;font-family:var(--mono);}
+.wf-act-dot{width:5px;height:5px;background:var(--px);border-radius:50%;}
+.wf-meta{margin-top:0.65rem;padding-top:0.6rem;border-top:1px solid var(--bg2);font-size:0.7rem;color:var(--text3);font-family:var(--mono);}
+.wf-empty{text-align:center;padding:3rem 2rem;color:var(--text3);}
+.wf-empty-icon{font-size:2.5rem;margin-bottom:0.75rem;}
+.wf-empty-title{font-size:1rem;font-weight:700;color:var(--text2);margin-bottom:0.4rem;}
 
-/* ════════════════════════════════════
-   TOASTS
-════════════════════════════════════ */
-#toast-stack{position:fixed;top:88px;right:1.5rem;z-index:9000;display:flex;flex-direction:column;gap:0.5rem;pointer-events:none;}
-.toast{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:0.75rem 1.1rem;font-size:0.875rem;font-weight:500;box-shadow:var(--shadow2);display:flex;align-items:center;gap:0.5rem;max-width:300px;animation:toastIn .3s ease,toastOut .3s ease 2.7s forwards;}
-.toast.xp{border-left:4px solid var(--px);}
-.toast.success{border-left:4px solid var(--green);}
-.toast.warn{border-left:4px solid var(--orange);}
-.toast.err{border-left:4px solid var(--red);}
-@keyframes toastIn{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
-@keyframes toastOut{to{opacity:0;transform:translateX(40px)}}
+/* ════ VOICE OVERLAY ════ */
+#voice-overlay{display:none;position:fixed;inset:0;background:rgba(10,12,30,0.92);z-index:9500;flex-direction:column;align-items:center;justify-content:center;gap:2rem;}
+#voice-overlay.show{display:flex;}
+.voice-mic-ring{width:100px;height:100px;border-radius:50%;background:rgba(79,70,229,0.15);border:3px solid var(--px);display:flex;align-items:center;justify-content:center;position:relative;}
+.voice-mic-ring::before,.voice-mic-ring::after{content:'';position:absolute;border-radius:50%;border:2px solid rgba(79,70,229,0.3);animation:voiceRing 1.8s ease-out infinite;}
+.voice-mic-ring::before{width:130px;height:130px;animation-delay:0s;}
+.voice-mic-ring::after{width:165px;height:165px;animation-delay:0.5s;}
+@keyframes voiceRing{0%{transform:scale(0.8);opacity:0.7}100%{transform:scale(1);opacity:0}}
+.voice-mic-icon{font-size:2.4rem;animation:voicePulse 1s ease-in-out infinite;}
+@keyframes voicePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+.voice-waveform{display:flex;align-items:flex-end;gap:4px;height:52px;}
+.vw-bar{width:5px;border-radius:3px;background:var(--px);animation:vwAnim var(--dur,0.6s) var(--dly,0s) ease-in-out infinite alternate;}
+@keyframes vwAnim{from{height:6px;background:var(--px3)}to{height:var(--hh,30px);background:var(--px)}}
+.voice-transcript-box{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:1.25rem 1.75rem;max-width:500px;width:90%;min-height:60px;text-align:center;}
+.voice-transcript-text{font-size:1rem;color:#e8eaff;line-height:1.6;font-family:var(--mono);}
+.voice-transcript-cursor{display:inline-block;width:2px;height:1em;background:#818cf8;margin-left:2px;animation:blinkCursor 0.8s step-end infinite;vertical-align:text-bottom;}
+@keyframes blinkCursor{0%,100%{opacity:1}50%{opacity:0}}
+.voice-status{font-size:0.78rem;color:#8892b0;letter-spacing:0.05em;}
+.voice-cancel-btn{padding:0.5rem 1.5rem;background:rgba(220,38,38,0.15);border:1px solid rgba(220,38,38,0.3);color:#f87171;border-radius:6px;font-size:0.82rem;font-weight:600;}
 
-/* ════════════════════════════════════
-   N8N MODAL
-════════════════════════════════════ */
+/* ════ MODALS ════ */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:8000;align-items:center;justify-content:center;padding:1rem;}
 .modal-overlay.open{display:flex;}
 .modal-box{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow2);padding:2rem;width:100%;max-width:640px;max-height:90vh;overflow-y:auto;border:1px solid var(--border);}
@@ -251,6 +314,7 @@ input,select,textarea{font-family:var(--font);}
 .modal-close:hover{background:rgba(220,38,38,0.1);color:var(--red);border-color:var(--red);}
 .modal-task-box{padding:0.75rem 1rem;background:var(--bg2);border:1px solid var(--border);border-radius:8px;font-size:0.9rem;font-weight:600;margin-bottom:1.5rem;}
 .modal-section-label{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text3);margin-bottom:0.75rem;}
+/* mini flow in modal */
 .wf-diagram{display:flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem;flex-wrap:wrap;}
 .wf-node{padding:0.6rem 1rem;border:2px solid;border-radius:8px;font-size:0.8rem;font-weight:600;text-align:center;min-width:90px;}
 .wf-node.trigger{border-color:var(--red);color:var(--red);background:rgba(220,38,38,0.05);}
@@ -273,10 +337,7 @@ input,select,textarea{font-family:var(--font);}
 .deploy-success-title{font-size:1.2rem;font-weight:700;color:var(--green);}
 .deploy-success-sub{font-size:0.875rem;color:var(--text3);line-height:1.7;}
 .deploy-close-btn{padding:0.75rem 2rem;background:var(--green);color:white;border:none;border-radius:var(--radius-sm);font-size:0.9rem;font-weight:700;}
-
-/* ════════════════════════════════════
-   MILESTONE MODAL
-════════════════════════════════════ */
+/* milestone */
 .milestone-box{text-align:center;}
 .milestone-icon{font-size:3.5rem;margin-bottom:1rem;}
 .milestone-title{font-family:var(--pixel);font-size:0.8rem;color:var(--px);margin-bottom:0.75rem;}
@@ -286,23 +347,43 @@ input,select,textarea{font-family:var(--font);}
 .milestone-input:focus{border-color:var(--px);}
 .milestone-save-btn{padding:0.85rem;background:var(--px);color:white;border:none;border-radius:var(--radius-sm);font-size:0.95rem;font-weight:700;}
 
-/* ════════════════════════════════════
-   VOICE FAB
-════════════════════════════════════ */
-#voice-fab{position:fixed;bottom:2rem;right:2rem;width:60px;height:60px;background:var(--px);color:white;border:none;border-radius:50%;font-size:1.5rem;box-shadow:0 4px 16px rgba(79,70,229,0.4);z-index:600;transition:all .2s;display:flex;align-items:center;justify-content:center;display:none;}
-#voice-fab:hover{background:var(--px2);transform:scale(1.08);box-shadow:0 6px 24px rgba(79,70,229,0.5);}
+/* ════ TOASTS ════ */
+#toast-stack{position:fixed;top:88px;right:1.5rem;z-index:9000;display:flex;flex-direction:column;gap:0.5rem;pointer-events:none;}
+.toast{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:0.75rem 1.1rem;font-size:0.875rem;font-weight:500;box-shadow:var(--shadow2);display:flex;align-items:center;gap:0.5rem;max-width:300px;animation:toastIn .3s ease,toastOut .3s ease 2.7s forwards;}
+.toast.xp{border-left:4px solid var(--px);}
+.toast.success{border-left:4px solid var(--green);}
+.toast.warn{border-left:4px solid var(--orange);}
+.toast.err{border-left:4px solid var(--red);}
+@keyframes toastIn{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+@keyframes toastOut{to{opacity:0;transform:translateX(40px)}}
 
-/* ════════════════════════════════════
-   RESPONSIVE
-════════════════════════════════════ */
+/* ════ VOICE FAB ════ */
+#voice-fab{position:fixed;bottom:2rem;right:2rem;width:60px;height:60px;background:var(--px);color:white;border:none;border-radius:50%;font-size:1.5rem;box-shadow:0 4px 16px rgba(79,70,229,0.4);z-index:600;transition:all .2s;display:none;align-items:center;justify-content:center;animation:fabPulse 3s infinite;}
+#voice-fab:hover{background:var(--px2);transform:scale(1.08);}
+@keyframes fabPulse{0%,100%{box-shadow:0 4px 16px rgba(79,70,229,0.4)}50%{box-shadow:0 4px 28px rgba(79,70,229,0.65)}}
+
 @media(max-width:1100px){.board{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:700px){.board{grid-template-columns:1fr;}.team-grid{grid-template-columns:1fr;}.header-nav{display:none;}}
 </style>
 </head>
 <body>
 
-<!-- ═══════════════ TOAST STACK ═══════════════ -->
 <div id="toast-stack"></div>
+
+<!-- ═══════════════ VOICE OVERLAY ═══════════════ -->
+<div id="voice-overlay">
+  <div class="voice-mic-ring">
+    <span class="voice-mic-icon">🎙️</span>
+  </div>
+  <div class="voice-waveform" id="voice-waveform"></div>
+  <div class="voice-transcript-box">
+    <div class="voice-transcript-text" id="voice-transcript">
+      <span class="voice-transcript-cursor"></span>
+    </div>
+  </div>
+  <div class="voice-status" id="voice-status">Listening...</div>
+  <button class="voice-cancel-btn" onclick="cancelVoice()">✕ Cancel</button>
+</div>
 
 <!-- ═══════════════ LOGIN ═══════════════ -->
 <div id="s-login" class="screen active">
@@ -315,35 +396,19 @@ input,select,textarea{font-family:var(--font);}
     </div>
     <div class="login-title">Welcome back 👋</div>
     <div class="login-sub">Sign in to your workspace</div>
-    <div class="form-field">
-      <label>Email</label>
-      <input class="form-input" id="l-email" type="text" placeholder="hero@company.com" value="arjun@voxops.ai"/>
-    </div>
-    <div class="form-field">
-      <label>Password</label>
-      <input class="form-input" id="l-pass" type="password" placeholder="••••••••" value="demo123"/>
-    </div>
+    <div class="form-field"><label>Email</label><input class="form-input" id="l-email" type="text" placeholder="hero@company.com" value="arjun@voxops.ai"/></div>
+    <div class="form-field"><label>Password</label><input class="form-input" id="l-pass" type="password" placeholder="••••••••" value="demo123"/></div>
     <div style="font-size:0.8rem;font-weight:600;color:var(--text2);margin-bottom:0.75rem;text-transform:uppercase;letter-spacing:0.05em;">Dashboard Mode</div>
     <div class="mode-picker">
-      <button class="mode-btn selected" data-mode="personal" onclick="selectMode(this,'personal')">
-        <span class="mode-icon">🧑‍💻</span>
-        <span style="font-size:0.875rem;">Personal</span>
-        <span style="font-size:0.75rem;color:var(--text3);">My tasks & habits</span>
-      </button>
-      <button class="mode-btn" data-mode="team" onclick="selectMode(this,'team')">
-        <span class="mode-icon">👥</span>
-        <span style="font-size:0.875rem;">Team</span>
-        <span style="font-size:0.75rem;color:var(--text3);">Shared workspace</span>
-      </button>
+      <button class="mode-btn selected" data-mode="personal" onclick="selectMode(this,'personal')"><span class="mode-icon">🧑‍💻</span><span style="font-size:0.875rem;">Personal</span><span style="font-size:0.75rem;color:var(--text3);">My tasks & habits</span></button>
+      <button class="mode-btn" data-mode="team" onclick="selectMode(this,'team')"><span class="mode-icon">👥</span><span style="font-size:0.875rem;">Team</span><span style="font-size:0.75rem;color:var(--text3);">Shared workspace</span></button>
     </div>
     <button class="btn-primary" onclick="doLogin()">Sign In →</button>
   </div>
 </div>
 
-<!-- ═══════════════ APP SHELL ═══════════════ -->
+<!-- ═══════════════ APP ═══════════════ -->
 <div id="s-app" class="screen">
-
-  <!-- HEADER -->
   <div id="app-header">
     <div style="display:flex;align-items:center;gap:1rem;">
       <div class="header-logo">⬡ Vox<span>Ops</span></div>
@@ -351,7 +416,7 @@ input,select,textarea{font-family:var(--font);}
     </div>
     <div class="header-nav">
       <button class="nav-tab active" onclick="showPage('board',this)">Board</button>
-      <button class="nav-tab" onclick="showPage('team',this)" id="team-nav-btn">Team</button>
+      <button class="nav-tab" onclick="showPage('team',this)">Team</button>
       <button class="nav-tab" onclick="showPage('workflows',this)">Workflows</button>
     </div>
     <div class="header-right">
@@ -368,187 +433,365 @@ input,select,textarea{font-family:var(--font);}
     </div>
   </div>
 
-  <!-- CHAR STRIP -->
   <div id="char-strip"></div>
 
-  <!-- BOARD PAGE -->
+  <!-- BOARD -->
   <div id="p-board">
     <div id="board-wrap">
       <div class="board" id="board">
-        <!-- HABITS -->
         <div class="col-card">
-          <div class="col-head">
-            <div class="col-head-left">
-              <div class="col-dot" style="background:var(--red)"></div>
-              <span class="col-title" style="color:var(--red)">Habits</span>
-              <span class="col-count" id="cnt-habits">0</span>
-            </div>
-            <button class="col-add-btn" onclick="toggleAdd('habits')">+</button>
-          </div>
-          <div class="col-body" id="body-habits">
-            <div class="add-row" id="add-habits" style="display:none">
-              <input id="inp-habits" placeholder="New habit..." onkeydown="if(event.key==='Enter')addTask('habits')"/>
-              <select id="sel-habits">
-                <option value="api">API Dev</option>
-                <option value="sql">SQL</option>
-                <option value="debug">Debug</option>
-                <option value="auth">Auth</option>
-                <option value="backend">Backend</option>
-              </select>
-              <button class="add-ok" onclick="addTask('habits')">Add</button>
-            </div>
-          </div>
+          <div class="col-head"><div class="col-head-left"><div class="col-dot" style="background:var(--red)"></div><span class="col-title" style="color:var(--red)">Habits</span><span class="col-count" id="cnt-habits">0</span></div><button class="col-add-btn" onclick="toggleAdd('habits')">+</button></div>
+          <div class="col-body" id="body-habits"><div class="add-row" id="add-habits" style="display:none"><input id="inp-habits" placeholder="New habit..." onkeydown="if(event.key==='Enter')addTask('habits')"/><select id="sel-habits"><option value="api">API</option><option value="sql">SQL</option><option value="debug">Debug</option><option value="auth">Auth</option><option value="backend">Backend</option></select><button class="add-ok" onclick="addTask('habits')">Add</button></div></div>
         </div>
-
-        <!-- DAILIES -->
         <div class="col-card">
-          <div class="col-head">
-            <div class="col-head-left">
-              <div class="col-dot" style="background:var(--yellow)"></div>
-              <span class="col-title" style="color:var(--yellow)">Dailies</span>
-              <span class="col-count" id="cnt-dailies">0</span>
-            </div>
-            <button class="col-add-btn" onclick="toggleAdd('dailies')">+</button>
-          </div>
-          <div class="col-body" id="body-dailies">
-            <div class="add-row" id="add-dailies" style="display:none">
-              <input id="inp-dailies" placeholder="New daily..." onkeydown="if(event.key==='Enter')addTask('dailies')"/>
-              <button class="add-ok" onclick="addTask('dailies')">Add</button>
-            </div>
-          </div>
+          <div class="col-head"><div class="col-head-left"><div class="col-dot" style="background:var(--yellow)"></div><span class="col-title" style="color:var(--yellow)">Dailies</span><span class="col-count" id="cnt-dailies">0</span></div><button class="col-add-btn" onclick="toggleAdd('dailies')">+</button></div>
+          <div class="col-body" id="body-dailies"><div class="add-row" id="add-dailies" style="display:none"><input id="inp-dailies" placeholder="New daily..." onkeydown="if(event.key==='Enter')addTask('dailies')"/><button class="add-ok" onclick="addTask('dailies')">Add</button></div></div>
         </div>
-
-        <!-- TODOS -->
         <div class="col-card">
-          <div class="col-head">
-            <div class="col-head-left">
-              <div class="col-dot" style="background:var(--cyan)"></div>
-              <span class="col-title" style="color:var(--cyan)">To-Dos</span>
-              <span class="col-count" id="cnt-todos">0</span>
-            </div>
-            <button class="col-add-btn" onclick="toggleAdd('todos')">+</button>
-          </div>
-          <div class="col-body" id="body-todos">
-            <div class="add-row" id="add-todos" style="display:none">
-              <input id="inp-todos" placeholder="New to-do..." onkeydown="if(event.key==='Enter')addTask('todos')"/>
-              <select id="sel-todos">
-                <option value="h">High</option>
-                <option value="m" selected>Med</option>
-                <option value="l">Low</option>
-              </select>
-              <button class="add-ok" onclick="addTask('todos')">Add</button>
-            </div>
-          </div>
+          <div class="col-head"><div class="col-head-left"><div class="col-dot" style="background:var(--cyan)"></div><span class="col-title" style="color:var(--cyan)">To-Dos</span><span class="col-count" id="cnt-todos">0</span></div><button class="col-add-btn" onclick="toggleAdd('todos')">+</button></div>
+          <div class="col-body" id="body-todos"><div class="add-row" id="add-todos" style="display:none"><input id="inp-todos" placeholder="New to-do..." onkeydown="if(event.key==='Enter')addTask('todos')"/><select id="sel-todos"><option value="h">High</option><option value="m" selected>Med</option><option value="l">Low</option></select><button class="add-ok" onclick="addTask('todos')">Add</button></div></div>
         </div>
-
-        <!-- REWARDS -->
         <div class="col-card">
-          <div class="col-head">
-            <div class="col-head-left">
-              <div class="col-dot" style="background:var(--green)"></div>
-              <span class="col-title" style="color:var(--green)">Rewards</span>
-              <span class="col-count" id="cnt-rewards">0</span>
-            </div>
-            <button class="col-add-btn" onclick="toggleAdd('rewards')">+</button>
-          </div>
-          <div class="col-body" id="body-rewards">
-            <div class="add-row" id="add-rewards" style="display:none">
-              <input id="inp-rewards" placeholder="Reward name..." onkeydown="if(event.key==='Enter')addTask('rewards')"/>
-              <input id="inp-rewards-cost" type="number" placeholder="Cost" min="1" style="width:70px" value="30"/>
-              <button class="add-ok" onclick="addTask('rewards')">Add</button>
-            </div>
-          </div>
+          <div class="col-head"><div class="col-head-left"><div class="col-dot" style="background:var(--green)"></div><span class="col-title" style="color:var(--green)">Rewards</span><span class="col-count" id="cnt-rewards">0</span></div><button class="col-add-btn" onclick="toggleAdd('rewards')">+</button></div>
+          <div class="col-body" id="body-rewards"><div class="add-row" id="add-rewards" style="display:none"><input id="inp-rewards" placeholder="Reward name..." onkeydown="if(event.key==='Enter')addTask('rewards')"/><input id="inp-rewards-cost" type="number" placeholder="Cost" min="1" style="width:70px" value="30"/><button class="add-ok" onclick="addTask('rewards')">Add</button></div></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- TEAM PAGE -->
+  <!-- TEAM -->
   <div id="p-team" style="display:none">
-    <div id="s-team">
-      <div class="team-wrap">
-        <div class="team-section-title">Team Activity Feed</div>
-        <div class="team-grid">
-          <div class="team-card">
-            <h3>Recent Activity</h3>
-            <div id="team-activity"></div>
-          </div>
-          <div class="team-card">
-            <h3>Team Members</h3>
-            <div id="team-members"></div>
-          </div>
+    <div id="s-team"><div class="team-wrap">
+      <div class="team-section-title">Team Activity Feed</div>
+      <div class="team-grid">
+        <div class="team-card"><h3>Recent Activity</h3><div id="team-activity"></div></div>
+        <div class="team-card"><h3>Team Members</h3><div id="team-members"></div></div>
+      </div>
+      <div class="team-section-title">Shared Tasks</div>
+      <div class="team-card" style="margin-bottom:1.25rem">
+        <h3>Active Tasks</h3>
+        <div id="team-tasks"></div>
+        <div class="add-team-row"><input class="add-team-input" id="team-task-inp" placeholder="Add shared task..." onkeydown="if(event.key==='Enter')addTeamTask()"/><select class="form-input" id="team-task-pri" style="width:100px;padding:0.6rem;"><option value="h">High</option><option value="m" selected>Med</option><option value="l">Low</option></select><button class="add-team-btn" onclick="addTeamTask()">Add Task</button></div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- WORKFLOWS -->
+  <div id="p-workflows" style="display:none">
+    <div id="s-workflows"><div class="wf-wrap">
+      <div class="wf-page-title">⚡ n8n Workflows</div>
+      <div class="wf-page-sub">Live automation canvases — deploy directly from here or from the ⚡ n8n badge on any To-Do task</div>
+
+      <!-- LEAD GEN SECTION -->
+      <div class="wf-section" id="wf-section-leadgen">
+        <div class="wf-section-header">
+          <div class="wf-section-label">📋 Lead Gen &amp; Outreach<span class="wf-section-badge pending" id="badge-leadgen">Ready to Deploy</span></div>
+          <div style="font-size:0.78rem;color:var(--text3);font-family:var(--mono);">Trigger: task completed 3+ times</div>
         </div>
-        <div class="team-section-title">Shared Tasks</div>
-        <div class="team-card" style="margin-bottom:1.25rem">
-          <h3>Active Tasks</h3>
-          <div id="team-tasks"></div>
-          <div class="add-team-row">
-            <input class="add-team-input" id="team-task-inp" placeholder="Add shared task..." onkeydown="if(event.key==='Enter')addTeamTask()"/>
-            <select class="form-input" id="team-task-pri" style="width:100px;padding:0.6rem;">
-              <option value="h">High</option>
-              <option value="m" selected>Med</option>
-              <option value="l">Low</option>
-            </select>
-            <button class="add-team-btn" onclick="addTeamTask()">Add Task</button>
+        <div class="n8n-canvas-light" id="canvas-leadgen">
+          <div class="n8n-canvas-hdr">
+            <div class="n8n-canvas-hdr-title">⚡ Lead Gen &amp; Outreach Workflow · <span style="color:#059669;font-size:0.68rem;">Light Theme</span></div>
+            <button class="n8n-run-wf-btn" onclick="deployCanvasWorkflow('leadgen',this)">🚀 Deploy</button>
+          </div>
+          <div class="n8n-canvas-body">
+            <!-- TOP ROW -->
+            <div class="nf-row" style="align-items:flex-start;">
+              <!-- Trigger -->
+              <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;padding-top:4px;margin-right:4px;">
+                <div class="nf-trigger">⚡</div>
+              </div>
+              <div class="nf-conn"><div class="nf-arr"></div></div>
+              <!-- On form submission -->
+              <div class="nf-node" style="border-color:#6366f1;">
+                <div class="nf-node-icon" style="background:#eef0ff;">📝</div>
+                <div class="nf-node-name">On form submission</div>
+                <div class="nf-node-sub">POST: https://api.apify.com/v8...</div>
+              </div>
+              <div class="nf-conn"><div class="nf-arr"></div></div>
+              <!-- Search By People -->
+              <div class="nf-node" style="border-color:#0891b2;">
+                <div class="nf-node-icon" style="background:#e0f5ff;">🌐</div>
+                <div class="nf-node-name">Search By People</div>
+                <div class="nf-node-sub">GET: https://api.apify.com/v2/</div>
+              </div>
+              <div class="nf-conn"><div class="nf-arr"></div></div>
+              <!-- Get Lead Data -->
+              <div class="nf-node" style="border-color:#0891b2;">
+                <div class="nf-node-icon" style="background:#e0f5ff;">🌐</div>
+                <div class="nf-node-name">Get Lead Data From Api</div>
+                <div class="nf-node-sub">POST: https://api.apify.com/v2/</div>
+              </div>
+              <div class="nf-conn"><div class="nf-arr"></div></div>
+              <!-- Loop Over Items -->
+              <div class="nf-node" style="border-color:#059669;">
+                <div class="nf-node-icon" style="background:#e0fff4;">🔄</div>
+                <div class="nf-node-name">Loop Over Items</div>
+                <div class="nf-cond-tags"><span class="nf-cond-tag nf-tag-true">done</span><span class="nf-cond-tag nf-tag-false">loop</span></div>
+              </div>
+              <div class="nf-conn"><div class="nf-arr"></div></div>
+              <!-- Check Duplicate -->
+              <div class="nf-node" style="border-color:#059669;">
+                <div class="nf-node-icon" style="background:#e0fff4;">📊</div>
+                <div class="nf-node-name">Check Duplicate</div>
+                <div class="nf-node-sub">read: sheet</div>
+              </div>
+              <div class="nf-conn"><div class="nf-arr"></div></div>
+              <!-- If Duplicate -->
+              <div class="nf-node" style="border-color:#d97706;">
+                <div class="nf-node-icon" style="background:#fff8e0;">⑂</div>
+                <div class="nf-node-name">If Duplicate</div>
+                <div class="nf-cond-tags"><span class="nf-cond-tag nf-tag-true">true</span><span class="nf-cond-tag nf-tag-false">false</span></div>
+              </div>
+              <div class="nf-conn"><div class="nf-arr"></div></div>
+              <!-- Append Lead Data -->
+              <div class="nf-node" style="border-color:#059669;">
+                <div class="nf-node-icon" style="background:#e0fff4;">📊</div>
+                <div class="nf-node-name">Append Lead Data in Sheet</div>
+                <div class="nf-node-sub">append: sheet</div>
+              </div>
+              <div class="nf-conn"><div class="nf-arr"></div></div>
+              <!-- Scrape Profile -->
+              <div class="nf-node" style="border-color:#0891b2;">
+                <div class="nf-node-icon" style="background:#e0f5ff;">🌐</div>
+                <div class="nf-node-name">Scrape Profile Datas</div>
+                <div class="nf-node-sub">POST: https://api.apify.com/v2...</div>
+              </div>
+              <div class="nf-conn"><div class="nf-arr"></div></div>
+              <!-- Get Scraping Results -->
+              <div class="nf-node" style="border-color:#0891b2;">
+                <div class="nf-node-icon" style="background:#e0f5ff;">🌐</div>
+                <div class="nf-node-name">Get Scraping Results</div>
+                <div class="nf-node-sub">GET: https://api.apify.com/v2/...</div>
+              </div>
+              <div class="nf-conn"><div class="nf-arr"></div></div>
+              <!-- If Email Exit -->
+              <div class="nf-node" style="border-color:#d97706;">
+                <div class="nf-node-icon" style="background:#fff8e0;">⑂</div>
+                <div class="nf-node-name">If Email Exit</div>
+                <div class="nf-cond-tags"><span class="nf-cond-tag nf-tag-true">true</span><span class="nf-cond-tag nf-tag-false">false</span></div>
+              </div>
+            </div>
+
+            <!-- LOWER ROW (coming back from If Email Exit) -->
+            <div style="display:flex;align-items:flex-start;padding-left:2rem;gap:0;margin-top:0.3rem;">
+              <!-- Generate Summary (AI Agent with sub-nodes) -->
+              <div style="display:flex;flex-direction:column;align-items:center;">
+                <div class="nf-node" style="border-color:#6c47ff;min-width:145px;max-width:155px;background:#faf8ff;">
+                  <div style="display:flex;gap:0.4rem;margin-bottom:0.35rem;">
+                    <div class="nf-node-icon" style="background:#ede9ff;width:28px;height:28px;font-size:0.85rem;">🤖</div>
+                    <div>
+                      <div class="nf-node-name">Generate Summary and Services...</div>
+                    </div>
+                  </div>
+                  <div style="display:flex;gap:4px;flex-wrap:wrap;">
+                    <div style="font-size:0.5rem;background:#ede9ff;color:#6c47ff;border-radius:3px;padding:1px 5px;">ChatModelMemory</div>
+                    <div style="font-size:0.5rem;background:#ede9ff;color:#6c47ff;border-radius:3px;padding:1px 5px;">ToolOutput Parser</div>
+                  </div>
+                  <div style="display:flex;gap:8px;margin-top:6px;justify-content:center;">
+                    <div style="font-size:0.6rem;width:16px;height:16px;border-radius:50%;border:1px solid #c8ccee;display:flex;align-items:center;justify-content:center;cursor:pointer;">+</div>
+                    <div style="font-size:0.6rem;width:16px;height:16px;border-radius:50%;border:1px solid #c8ccee;display:flex;align-items:center;justify-content:center;cursor:pointer;">+</div>
+                  </div>
+                </div>
+                <!-- sub nodes -->
+                <div style="display:flex;gap:1rem;margin-top:0.5rem;">
+                  <div class="nf-sub-wrap">
+                    <div class="nf-dashed"></div>
+                    <div class="nf-sub-node"><span style="font-size:0.85rem;">🧠</span></div>
+                    <div class="nf-sub-label">OpenAI Chat Model</div>
+                  </div>
+                  <div class="nf-sub-wrap">
+                    <div class="nf-dashed"></div>
+                    <div class="nf-sub-node"><span style="font-size:0.7rem;font-weight:700;color:#6c47ff;">&lt;/&gt;</span></div>
+                    <div class="nf-sub-label">Structured Output Parser</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="nf-conn"><div class="nf-arr"></div></div>
+
+              <!-- Generate Outreach Email (AI Agent) -->
+              <div style="display:flex;flex-direction:column;align-items:center;">
+                <div class="nf-node" style="border-color:#6c47ff;min-width:145px;max-width:155px;background:#faf8ff;">
+                  <div style="display:flex;gap:0.4rem;margin-bottom:0.35rem;">
+                    <div class="nf-node-icon" style="background:#ede9ff;width:28px;height:28px;font-size:0.85rem;">🤖</div>
+                    <div><div class="nf-node-name">Generate Outreach Email</div></div>
+                  </div>
+                  <div style="display:flex;gap:4px;flex-wrap:wrap;">
+                    <div style="font-size:0.5rem;background:#ede9ff;color:#6c47ff;border-radius:3px;padding:1px 5px;">ChatModelMemory</div>
+                    <div style="font-size:0.5rem;background:#ede9ff;color:#6c47ff;border-radius:3px;padding:1px 5px;">ToolOutput Parser</div>
+                  </div>
+                  <div style="display:flex;gap:8px;margin-top:6px;justify-content:center;">
+                    <div style="font-size:0.6rem;width:16px;height:16px;border-radius:50%;border:1px solid #c8ccee;display:flex;align-items:center;justify-content:center;">+</div>
+                    <div style="font-size:0.6rem;width:16px;height:16px;border-radius:50%;border:1px solid #c8ccee;display:flex;align-items:center;justify-content:center;">+</div>
+                  </div>
+                </div>
+                <div style="display:flex;gap:1rem;margin-top:0.5rem;">
+                  <div class="nf-sub-wrap">
+                    <div class="nf-dashed"></div>
+                    <div class="nf-sub-node"><span style="font-size:0.85rem;">🧠</span></div>
+                    <div class="nf-sub-label">OpenAI Model</div>
+                  </div>
+                  <div class="nf-sub-wrap">
+                    <div class="nf-dashed"></div>
+                    <div class="nf-sub-node"><span style="font-size:0.7rem;font-weight:700;color:#6c47ff;">&lt;/&gt;</span></div>
+                    <div class="nf-sub-label">Output Parser</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="nf-conn"><div class="nf-arr"></div></div>
+
+              <!-- Human Approval (Gmail) -->
+              <div class="nf-node" style="border-color:#ea4335;min-width:120px;">
+                <div class="nf-node-icon" style="background:#fce8e6;font-size:0.85rem;font-weight:700;color:#ea4335;">M</div>
+                <div class="nf-node-name">Human Approval</div>
+                <div class="nf-node-sub">sendAndWait: message</div>
+              </div>
+
+              <div class="nf-conn"><div class="nf-arr"></div></div>
+
+              <!-- If Approve -->
+              <div class="nf-node" style="border-color:#059669;">
+                <div class="nf-node-icon" style="background:#e0fff4;">✅</div>
+                <div class="nf-node-name">If Approve</div>
+                <div class="nf-cond-tags"><span class="nf-cond-tag nf-tag-true">true</span><span class="nf-cond-tag nf-tag-false">false</span></div>
+              </div>
+
+              <div class="nf-conn"><div class="nf-arr"></div></div>
+
+              <!-- User All Data Append -->
+              <div class="nf-node" style="border-color:#059669;">
+                <div class="nf-node-icon" style="background:#e0fff4;">📊</div>
+                <div class="nf-node-name">User All Data Append in Sheet</div>
+                <div class="nf-node-sub">appendOrUpdate: sheet</div>
+              </div>
+
+              <div class="nf-conn"><div class="nf-arr"></div></div>
+
+              <!-- Send Outreach Email -->
+              <div class="nf-node" style="border-color:#ea4335;">
+                <div class="nf-node-icon" style="background:#fce8e6;font-size:0.85rem;font-weight:700;color:#ea4335;">M</div>
+                <div class="nf-node-name">Send Outreach Email</div>
+                <div class="nf-node-sub">send: message</div>
+              </div>
+            </div>
+          </div>
+          <div class="canvas-deploy-strip">
+            <div class="canvas-deploy-info">Nodes: 16 · Integrations: Apify, Google Sheets, Gmail, OpenAI · Trigger: form submission</div>
+            <button class="canvas-deploy-btn" id="deploy-btn-leadgen" onclick="deployCanvasWorkflow('leadgen',this)">🚀 Deploy Workflow</button>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- WORKFLOWS PAGE -->
-  <div id="p-workflows" style="display:none">
-    <div id="s-workflows">
-      <div class="wf-wrap">
-        <div class="wf-page-title">⚡ n8n Workflows</div>
-        <div class="wf-page-sub">Automated pipelines triggered when tasks are completed 3+ times</div>
+      <!-- CUSTOMER INSIGHTS SECTION -->
+      <div class="wf-section" id="wf-section-insights">
+        <div class="wf-section-header">
+          <div class="wf-section-label">🔍 Customer Insights<span class="wf-section-badge pending" id="badge-insights">Ready to Deploy</span></div>
+          <div style="font-size:0.78rem;color:var(--text3);font-family:var(--mono);">Trigger: task completed 3+ times</div>
+        </div>
+        <div class="n8n-canvas-dark" id="canvas-insights">
+          <div class="n8n-canvas-hdr">
+            <div class="n8n-canvas-hdr-title">🔍 Customer Insights Workflow · <span style="color:#10b981;font-size:0.68rem;">Dark Theme</span></div>
+            <button class="n8n-run-wf-btn" onclick="deployCanvasWorkflow('insights',this)">🚀 Deploy</button>
+          </div>
+          <div class="n8n-canvas-body" style="padding:2rem 1.5rem;">
+            <div class="nf-row" style="align-items:flex-start;gap:0;">
+              <!-- Get reviews -->
+              <div class="nf-node" style="border-color:#6366f1;">
+                <div class="nf-node-icon" style="background:rgba(99,102,241,0.15);">🌐</div>
+                <div class="nf-node-name">Get reviews</div>
+                <div class="nf-node-sub">POST: http://qdrant:6333...</div>
+              </div>
+              <div class="nf-conn"><div class="nf-arr"></div></div>
+              <!-- Apply K-means -->
+              <div style="display:flex;flex-direction:column;align-items:center;">
+                <div class="nf-node" style="border-color:#d97706;">
+                  <div class="nf-node-icon" style="background:rgba(217,119,6,0.15);font-size:1.1rem;font-weight:700;color:#d97706;">{}</div>
+                  <div class="nf-node-name">Apply K-means Algorithm</div>
+                </div>
+              </div>
+              <div class="nf-conn"><div class="nf-arr"></div></div>
+              <!-- Clusters To List -->
+              <div class="nf-node" style="border-color:#8b5cf6;">
+                <div class="nf-node-icon" style="background:rgba(139,92,246,0.15);font-size:1.1rem;color:#8b5cf6;">-≡</div>
+                <div class="nf-node-name">Clusters To List</div>
+              </div>
+              <div class="nf-conn"><div class="nf-arr"></div></div>
+              <!-- Customer Insights Agent -->
+              <div style="display:flex;flex-direction:column;align-items:center;">
+                <div class="nf-node" style="border-color:#6c47ff;min-width:155px;max-width:170px;">
+                  <div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.35rem;">
+                    <div style="font-size:1.2rem;">📊</div>
+                    <div class="nf-node-name">Customer Insights Agent</div>
+                  </div>
+                  <div style="font-size:0.52rem;color:#6878a8;">Tools Agent</div>
+                  <div style="margin-top:6px;font-size:0.5rem;color:#8892b0;">Model*</div>
+                </div>
+                <!-- sub node OpenAI -->
+                <div class="nf-sub-wrap">
+                  <div class="nf-dashed" style="height:28px;"></div>
+                  <div style="font-size:0.52rem;color:#6878a8;margin-bottom:4px;">Model</div>
+                  <div class="nf-sub-node" style="width:52px;height:52px;">
+                    <span style="font-size:1.1rem;">🧠</span>
+                  </div>
+                  <div class="nf-sub-label">OpenAI Chat Model</div>
+                </div>
+              </div>
+              <div class="nf-conn"><div class="nf-arr"></div></div>
+              <!-- Insights to GSheets -->
+              <div style="display:flex;align-items:center;gap:0;">
+                <div class="nf-node" style="border-color:#059669;">
+                  <div class="nf-node-icon" style="background:rgba(5,150,105,0.15);">📊</div>
+                  <div class="nf-node-name">Insights to GSheets</div>
+                  <div class="nf-node-sub">append: sheet</div>
+                </div>
+                <div style="width:28px;height:28px;border-radius:50%;border:2px solid #2e3760;display:flex;align-items:center;justify-content:center;margin-left:6px;margin-top:0;font-size:0.75rem;color:#6878a8;cursor:pointer;flex-shrink:0;align-self:flex-start;margin-top:28px;">+</div>
+              </div>
+            </div>
+          </div>
+          <div class="canvas-deploy-strip">
+            <div class="canvas-deploy-info">Nodes: 5 · Integrations: Qdrant, K-means, OpenAI, Google Sheets · Trigger: review data input</div>
+            <button class="canvas-deploy-btn" id="deploy-btn-insights" onclick="deployCanvasWorkflow('insights',this)">🚀 Deploy Workflow</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- USER-DEPLOYED WORKFLOWS -->
+      <div id="wf-user-section" style="display:none;">
+        <div style="font-size:1rem;font-weight:700;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;"><span style="width:4px;height:1em;background:var(--orange);display:inline-block;border-radius:2px;"></span>Other Deployed Automations</div>
         <div id="wf-list"></div>
       </div>
-    </div>
+    </div></div>
   </div>
 
-  <!-- Voice FAB -->
-  <button id="voice-fab" onclick="voiceInput()">🎙️</button>
-
+  <button id="voice-fab" onclick="startVoice()">🎙️</button>
 </div><!-- /#s-app -->
 
-<!-- ═══════════════ N8N MODAL ═══════════════ -->
+<!-- N8N MODAL -->
 <div class="modal-overlay" id="n8n-modal">
   <div class="modal-box">
     <div class="modal-header">
-      <div class="modal-title">⚡ Automate with n8n</div>
+      <div class="modal-title" id="n8n-modal-title">⚡ Automate with n8n</div>
       <button class="modal-close" onclick="closeModal('n8n-modal')">✕</button>
     </div>
     <div id="n8n-main">
-      <div class="modal-section-label">Stale task detected</div>
+      <div class="modal-section-label">Task detected</div>
       <div class="modal-task-box" id="n8n-task-name">Task name</div>
-      <div class="modal-section-label">Workflow diagram</div>
-      <div class="wf-diagram">
+      <div class="modal-section-label" id="n8n-wf-label">Suggested workflow</div>
+      <div class="wf-diagram" id="n8n-wf-diagram">
         <div class="wf-node trigger"><small>Trigger</small>Completed 3+ times</div>
         <div class="wf-arr">→</div>
         <div class="wf-node ai"><small>AI Engine</small>VoxOps COO Core</div>
         <div class="wf-arr">→</div>
-        <div class="wf-node action"><small>Action</small><span id="n8n-action-lbl">Slack Ping</span></div>
+        <div class="wf-node action"><small>Action</small><span id="n8n-action-lbl">Workflow</span></div>
       </div>
-      <div class="modal-section-label">Choose automation action</div>
-      <div class="action-grid">
-        <div class="action-opt sel" data-act="slack" onclick="pickAction(this)">
-          <span class="action-opt-icon">💬</span>
-          <div class="action-opt-label">Slack Ping</div>
-          <div class="action-opt-desc">Notify channel daily</div>
-        </div>
-        <div class="action-opt" data-act="email" onclick="pickAction(this)">
-          <span class="action-opt-icon">📧</span>
-          <div class="action-opt-label">Email Digest</div>
-          <div class="action-opt-desc">Morning summary email</div>
-        </div>
-        <div class="action-opt" data-act="calendar" onclick="pickAction(this)">
-          <span class="action-opt-icon">📅</span>
-          <div class="action-opt-label">Calendar Block</div>
-          <div class="action-opt-desc">Auto-schedule focus block</div>
-        </div>
+      <div class="modal-section-label" id="n8n-action-sec">Choose automation action</div>
+      <div class="action-grid" id="n8n-action-grid">
+        <div class="action-opt sel" data-act="slack" onclick="pickAction(this)"><span class="action-opt-icon">💬</span><div class="action-opt-label">Slack Ping</div><div class="action-opt-desc">Notify channel daily</div></div>
+        <div class="action-opt" data-act="email" onclick="pickAction(this)"><span class="action-opt-icon">📧</span><div class="action-opt-label">Email Digest</div><div class="action-opt-desc">Morning summary email</div></div>
+        <div class="action-opt" data-act="calendar" onclick="pickAction(this)"><span class="action-opt-icon">📅</span><div class="action-opt-label">Calendar Block</div><div class="action-opt-desc">Auto-schedule focus block</div></div>
       </div>
-      <button class="deploy-btn" onclick="deployN8n()">🚀 Deploy Workflow</button>
+      <button class="deploy-btn" id="n8n-deploy-btn" onclick="deployN8n()">🚀 Deploy Workflow</button>
     </div>
     <div class="deploy-success" id="n8n-success">
       <div class="deploy-success-icon">✅</div>
@@ -559,16 +802,14 @@ input,select,textarea{font-family:var(--font);}
   </div>
 </div>
 
-<!-- ═══════════════ MILESTONE MODAL ═══════════════ -->
+<!-- MILESTONE MODAL -->
 <div class="modal-overlay" id="milestone-modal">
   <div class="modal-box" style="max-width:460px;">
     <div class="milestone-box">
       <div class="milestone-icon">🏆</div>
       <div class="milestone-title" id="ms-title">LEVEL 10 REACHED!</div>
       <div class="milestone-sub" id="ms-sub">You've hit a major milestone! Set a real-world reward to keep yourself motivated.</div>
-      <div class="milestone-input-wrap">
-        <input class="milestone-input" id="ms-reward-input" placeholder="e.g. Weekend trip to Goa 🏖️"/>
-      </div>
+      <div class="milestone-input-wrap"><input class="milestone-input" id="ms-reward-input" placeholder="e.g. Weekend trip to Goa 🏖️"/></div>
       <button class="milestone-save-btn" onclick="saveMilestone()">Save My Reward 🎯</button>
     </div>
   </div>
@@ -576,94 +817,26 @@ input,select,textarea{font-family:var(--font);}
 
 <script>
 // ══════════════════════════════════════════════════
-//  PIXEL ART LEGO BUSINESS MINIFIG BUILDER
-//  Inspired by real LEGO business figs (suit+briefcase)
+//  LEGO MINIFIG
 // ══════════════════════════════════════════════════
-function makeFig(opts={},scale=5){
-  const {
-    hair='#3D2B1F', torso='#1E3A5F', legs='#374151',
-    face='#FFD700', tie='#DC2626', glasses=false,
-    hat=false, accessory='briefcase'
-  }=opts;
-  const S=scale, W=14*S, H=20*S;
+function makeFig(o={},S=5){
+  const {hair='#3D2B1F',torso='#1E3A5F',legs='#374151',face='#FFD700',tie='#DC2626',glasses=false,hat=false,accessory='briefcase'}=o;
   const r=(x,y,w,h,c)=>`<rect x="${x*S}" y="${y*S}" width="${w*S}" height="${h*S}" fill="${c}"/>`;
   let d='';
-
-  // Hat (optional bowler)
-  if(hat){
-    d+=r(3,0,8,1,'#1a1a1a'); // brim
-    d+=r(4,0,6,1,'#1a1a1a');
-    d+=r(3,0,8,2,'#111');
-    d+=r(4,1,6,3,'#1a1a1a');
-  }
-
-  // Hair
-  const hairY=hat?4:1;
-  d+=r(3,hairY,8,3,hair);
-  d+=r(2,hairY+1,2,2,hair);
-  d+=r(10,hairY+1,2,2,hair);
-
-  // Head
-  d+=r(3,hat?4:2,8,6,face);
-  // Eyes
-  d+=r(5,hat?6:4,1,1,'#1a1a1a');
-  d+=r(8,hat?6:4,1,1,'#1a1a1a');
-  // Mouth
-  d+=r(5,hat?8:6,4,1,'#B8860B');
-  // Glasses (optional)
-  if(glasses){
-    d+=r(4,hat?5:3,3,2,'rgba(0,0,0,0)');
-    d+=`<rect x="${4*S}" y="${(hat?5:3)*S}" width="${3*S}" height="${2*S}" fill="none" stroke="#333" stroke-width="${S*0.6}"/>`;
-    d+=`<rect x="${7*S}" y="${(hat?5:3)*S}" width="${3*S}" height="${2*S}" fill="none" stroke="#333" stroke-width="${S*0.6}"/>`;
-  }
-  // Collar line
-  d+=r(5,hat?9:7,4,1,'rgba(0,0,0,0.15)');
-
-  // Neck
-  d+=r(5,hat?10:8,4,1,face);
-
-  // Torso (suit jacket)
-  const ty=hat?11:9;
-  d+=r(2,ty,10,5,torso);
-  // Suit lapels
-  d+=r(2,ty,2,5,'#162d4a');
-  d+=r(10,ty,2,5,'#162d4a');
-  // Shirt/tie center
-  d+=r(5,ty,4,5,'#f0f0f0');
-  d+=r(6,ty,2,4,tie);
-  // Buttons on jacket
-  d+=r(2,ty+1,2,1,face);
-  d+=r(10,ty+1,2,1,face);
-  // Arms
-  d+=r(0,ty,2,4,torso);
-  d+=r(12,ty,2,4,torso);
-  // Hands
-  d+=r(0,ty+4,2,1,face);
-  d+=r(12,ty+4,2,1,face);
-
-  // Legs
-  const ly=ty+5;
-  d+=r(2,ly,5,4,legs);
-  d+=r(7,ly,5,4,legs);
-  // Trouser crease
-  d+=r(6,ly,2,4,'rgba(0,0,0,0.15)');
-  // Shoes
-  d+=r(2,ly+4,5,1,'#1a1a1a');
-  d+=r(7,ly+4,5,1,'#1a1a1a');
-
-  // Accessory
-  if(accessory==='briefcase'){
-    d+=r(12,ty+2,3,3,'#8B4513');
-    d+=r(13,ty+1,1,1,'#A0522D');
-  } else if(accessory==='laptop'){
-    d+=r(12,ty+1,3,2,'#555');
-    d+=r(12,ty+3,3,1,'#333');
-  } else if(accessory==='phone'){
-    d+=r(12,ty+2,2,3,'#222');
-    d+=r(12,ty+2,2,3,'#334');
-  }
-
-  return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" style="image-rendering:pixelated;display:block;">${d}</svg>`;
+  if(hat){d+=r(3,0,8,2,'#111');d+=r(4,1,6,3,'#1a1a1a');}
+  const hy=hat?4:1;d+=r(3,hy,8,3,hair);d+=r(2,hy+1,2,2,hair);d+=r(10,hy+1,2,2,hair);
+  const hd=hat?4:2;d+=r(3,hd,8,6,face);d+=r(5,hd+2,1,1,'#1a1a1a');d+=r(8,hd+2,1,1,'#1a1a1a');d+=r(5,hd+4,4,1,'#B8860B');
+  if(glasses){d+=`<rect x="${4*S}" y="${(hd+1)*S}" width="${3*S}" height="${2*S}" fill="none" stroke="#333" stroke-width="${S*0.5}"/>`;d+=`<rect x="${7*S}" y="${(hd+1)*S}" width="${3*S}" height="${2*S}" fill="none" stroke="#333" stroke-width="${S*0.5}"/>`;}
+  d+=r(5,hd+5,4,1,face);
+  const ty=hd+6;
+  d+=r(2,ty,10,5,torso);d+=r(2,ty,2,5,'#0e2238');d+=r(10,ty,2,5,'#0e2238');
+  d+=r(5,ty,4,5,'#f0f0f0');d+=r(6,ty,2,4,tie);
+  d+=r(0,ty,2,4,torso);d+=r(12,ty,2,4,torso);d+=r(0,ty+4,2,1,face);d+=r(12,ty+4,2,1,face);
+  const ly=ty+5;d+=r(2,ly,5,4,legs);d+=r(7,ly,5,4,legs);d+=r(6,ly,2,4,'rgba(0,0,0,0.18)');d+=r(2,ly+4,5,1,'#1a1a1a');d+=r(7,ly+4,5,1,'#1a1a1a');
+  if(accessory==='briefcase'){d+=r(12,ty+2,3,3,'#8B4513');d+=r(13,ty+1,1,1,'#A0522D');}
+  else if(accessory==='laptop'){d+=r(12,ty+1,3,2,'#555');d+=r(12,ty+3,3,1,'#333');}
+  else if(accessory==='phone'){d+=r(12,ty+2,2,3,'#1a1a2e');}
+  return `<svg width="${14*S}" height="${(ly+5)*S+S}" viewBox="0 0 ${14*S} ${(ly+5)*S+S}" style="image-rendering:pixelated;display:block;">${d}</svg>`;
 }
 
 const TEAM_CHARS=[
@@ -677,7 +850,7 @@ const TEAM_CHARS=[
 ];
 
 // ══════════════════════════════════════════════════
-//  APP STATE
+//  STATE
 // ══════════════════════════════════════════════════
 let st={
   user:'Player',mode:'personal',xp:40,level:5,coins:240,
@@ -695,13 +868,16 @@ let st={
     {id:5,name:'Auth token refresh',cat:'auth',done:true,streak:5,timer:'20m'},
   ],
   todos:[
-    {id:1,name:'Set up n8n automation pipeline',pri:'h',done:false,daysOld:6,count:2},
+    // ── 2 LINKED WORKFLOW TASKS ──
+    {id:10,name:'Set up Lead Gen & Outreach automation pipeline',pri:'h',done:false,daysOld:5,count:3,wfType:'leadgen'},
+    {id:11,name:'Build Customer Insights pipeline from review data',pri:'h',done:false,daysOld:4,count:3,wfType:'insights'},
+    // regular todos
+    {id:1,name:'Fix authentication bug in prod',pri:'h',done:false,daysOld:1,count:1},
     {id:2,name:'Write Q3 API documentation',pri:'h',done:false,daysOld:8,count:4},
-    {id:3,name:'Fix authentication bug in prod',pri:'h',done:false,daysOld:1,count:1},
-    {id:4,name:'Migrate MySQL schema v2',pri:'m',done:false,daysOld:5,count:3},
-    {id:5,name:'Integrate Stripe webhook',pri:'m',done:false,daysOld:10,count:5},
-    {id:6,name:'Optimise slow SQL queries',pri:'l',done:false,daysOld:3,count:3},
-    {id:7,name:'Deploy to staging environment',pri:'h',done:true,daysOld:0,count:1},
+    {id:3,name:'Migrate MySQL schema v2',pri:'m',done:false,daysOld:5,count:3},
+    {id:4,name:'Integrate Stripe webhook',pri:'m',done:false,daysOld:10,count:5},
+    {id:5,name:'Optimise slow SQL queries',pri:'l',done:false,daysOld:3,count:3},
+    {id:6,name:'Deploy to staging environment',pri:'h',done:true,daysOld:0,count:1},
   ],
   rewards:[
     {id:1,name:'Coffee break ☕',cost:10},
@@ -724,9 +900,12 @@ let st={
     {user:'Rahul',action:'levelled up to LVL 12!',xp:0,time:'2h ago',color:'#1E3A5F'},
     {user:'Sara',action:'completed 3 dailies',xp:30,time:'3h ago',color:'#7C2D12'},
   ],
-  nextId:200, activeN8nTask:null,
+  // track which canvas workflows are deployed
+  canvasDeployed:{leadgen:false,insights:false},
+  nextId:200,activeN8nTask:null,
 };
 
+const PRI_LABEL={h:'High',m:'Med',l:'Low'};
 let loginMode='personal';
 
 // ══════════════════════════════════════════════════
@@ -737,7 +916,6 @@ function selectMode(btn,mode){
   document.querySelectorAll('.mode-btn').forEach(b=>b.classList.remove('selected'));
   btn.classList.add('selected');
 }
-
 function doLogin(){
   const email=document.getElementById('l-email').value.trim();
   const pass=document.getElementById('l-pass').value;
@@ -752,7 +930,6 @@ function doLogin(){
   badge.className='mode-badge '+(st.mode==='team'?'team':'personal');
   initApp();
 }
-
 function doLogout(){
   document.getElementById('s-app').classList.remove('active');
   document.getElementById('s-login').classList.add('active');
@@ -763,90 +940,50 @@ function doLogout(){
 //  INIT
 // ══════════════════════════════════════════════════
 function initApp(){
-  renderCharStrip();
-  renderHeader();
-  renderAll();
-  renderWorkflows();
-  renderTeam();
-  // Pre-seed a couple workflows from stale todos
-  st.todos.filter(t=>t.count>=3&&!t.done).forEach(t=>{
-    if(!st.workflows.find(w=>w.taskId===t.id)){
-      createWorkflow(t,'slack');
-    }
-  });
-  renderWorkflows();
+  renderCharStrip();renderHeader();renderAll();renderWorkflows();renderTeam();
   toast(`Welcome, ${st.user}! +50 XP login bonus 🎉`,'xp');
   gainXP(50,false);
 }
-
 function renderCharStrip(){
-  const strip=document.getElementById('char-strip');
-  strip.innerHTML='';
+  const strip=document.getElementById('char-strip');strip.innerHTML='';
   TEAM_CHARS.forEach(c=>{
-    const item=document.createElement('div');
-    item.className='char-item';
-    const fig=document.createElement('div');
-    fig.innerHTML=makeFig(c,4);
-    fig.querySelector('svg').className='char-fig';
-    const lvl=document.createElement('div');
-    lvl.className='char-lvl '+(c.me?'me':'other');
-    lvl.textContent='LVL '+c.lvl;
-    const nm=document.createElement('div');
-    nm.className='char-name';
-    nm.textContent=c.me?st.user.split(' ')[0]:c.name;
-    item.appendChild(fig);item.appendChild(lvl);item.appendChild(nm);
-    strip.appendChild(item);
+    const item=document.createElement('div');item.className='char-item';
+    const fig=document.createElement('div');fig.innerHTML=makeFig(c,4);fig.querySelector('svg').className='char-fig';
+    const lvl=document.createElement('div');lvl.className='char-lvl '+(c.me?'me':'other');lvl.textContent='LVL '+c.lvl;
+    const nm=document.createElement('div');nm.className='char-name';nm.textContent=c.me?st.user.split(' ')[0]:c.name;
+    item.appendChild(fig);item.appendChild(lvl);item.appendChild(nm);strip.appendChild(item);
   });
 }
-
 function renderHeader(){
   const pct=st.xp%100;
   document.getElementById('h-lvl').textContent='LVL '+st.level;
   document.getElementById('h-xp-bar').style.width=pct+'%';
   document.getElementById('h-xp-text').textContent=(st.xp%100)+' / 100 XP';
   document.getElementById('h-coins').textContent=st.coins;
-  // mini figure in header
-  const hf=document.getElementById('header-fig');
-  hf.innerHTML=makeFig(TEAM_CHARS[0],3);
+  document.getElementById('header-fig').innerHTML=makeFig(TEAM_CHARS[0],3);
 }
-
 function renderAll(){renderHabits();renderDailies();renderTodos();renderRewards();}
 
 // ══════════════════════════════════════════════════
 //  HABITS
 // ══════════════════════════════════════════════════
 function renderHabits(){
-  const body=document.getElementById('body-habits');
-  const addRow=document.getElementById('add-habits');
-  body.innerHTML='';body.appendChild(addRow);
+  const body=document.getElementById('body-habits');const ar=document.getElementById('add-habits');
+  body.innerHTML='';body.appendChild(ar);
   document.getElementById('cnt-habits').textContent=st.habits.length;
   st.habits.forEach(h=>{
-    const d=document.createElement('div');
-    d.className='habit-card';
-    d.innerHTML=`
-      <div class="hb-btns">
-        <button class="hb-btn p" onclick="habitClick(${h.id},1)">+</button>
-        <button class="hb-btn m" onclick="habitClick(${h.id},-1)">−</button>
-      </div>
-      <div class="hb-info">
-        <div class="hb-name">${h.name}</div>
-        <div class="hb-meta">
-          <span class="hb-streak">🔥 ${h.streak} streak</span>
-          <span class="hb-cat">${h.cat}</span>
-        </div>
-      </div>
-      <button class="del-btn" onclick="delItem('habits',${h.id})">×</button>`;
+    const d=document.createElement('div');d.className='habit-card';
+    d.innerHTML=`<div class="hb-btns"><button class="hb-btn p" onclick="habitClick(${h.id},1)">+</button><button class="hb-btn m" onclick="habitClick(${h.id},-1)">−</button></div>
+    <div class="hb-info"><div class="hb-name">${h.name}</div><div class="hb-meta"><span class="hb-streak">🔥 ${h.streak} streak</span><span class="hb-cat">${h.cat}</span></div></div>
+    <button class="del-btn" onclick="delItem('habits',${h.id})">×</button>`;
     body.appendChild(d);
   });
 }
-
 function habitClick(id,dir){
-  const h=st.habits.find(x=>x.id===id);
-  if(!h)return;
-  h.count+=1;
+  const h=st.habits.find(x=>x.id===id);if(!h)return;
+  h.count++;
   if(dir===1){h.streak++;gainXP(10);gainCoins(5);toast(`+10 XP — ${h.name}!`,'xp');}
   else{h.streak=Math.max(0,h.streak-1);st.xp=Math.max(0,st.xp-5);toast(`Streak hit 😬`,'warn');}
-  if(h.count===3) triggerN8nSuggestion(h.id,'habit',h.name);
   renderHabits();renderHeader();
 }
 
@@ -854,31 +991,19 @@ function habitClick(id,dir){
 //  DAILIES
 // ══════════════════════════════════════════════════
 function renderDailies(){
-  const body=document.getElementById('body-dailies');
-  const addRow=document.getElementById('add-dailies');
-  body.innerHTML='';body.appendChild(addRow);
+  const body=document.getElementById('body-dailies');const ar=document.getElementById('add-dailies');
+  body.innerHTML='';body.appendChild(ar);
   document.getElementById('cnt-dailies').textContent=st.dailies.length;
   st.dailies.forEach(d=>{
-    const el=document.createElement('div');
-    el.className='daily-card'+(d.done?' done':'');
-    el.innerHTML=`
-      <div class="dl-check${d.done?' checked':''}" onclick="toggleDaily(${d.id})">${d.done?'✓':''}</div>
-      <div class="dl-info">
-        <div class="dl-name">${d.name}</div>
-        <div class="dl-meta">
-          <span class="dl-timer">⏱ ${d.timer}</span>
-          <span class="dl-streak">🔥${d.streak}</span>
-          <span class="dl-cat">${d.cat}</span>
-        </div>
-      </div>
-      <button class="del-btn" onclick="delItem('dailies',${d.id})">×</button>`;
+    const el=document.createElement('div');el.className='daily-card'+(d.done?' done':'');
+    el.innerHTML=`<div class="dl-check${d.done?' checked':''}" onclick="toggleDaily(${d.id})">${d.done?'✓':''}</div>
+    <div class="dl-info"><div class="dl-name">${d.name}</div><div class="dl-meta"><span class="dl-timer">⏱ ${d.timer}</span><span class="dl-streak">🔥${d.streak}</span><span class="dl-cat">${d.cat}</span></div></div>
+    <button class="del-btn" onclick="delItem('dailies',${d.id})">×</button>`;
     body.appendChild(el);
   });
 }
-
 function toggleDaily(id){
-  const d=st.dailies.find(x=>x.id===id);
-  if(!d)return;
+  const d=st.dailies.find(x=>x.id===id);if(!d)return;
   d.done=!d.done;
   if(d.done){d.streak++;gainXP(10);gainCoins(5);toast(`Daily done! +10 XP 🎯`,'xp');}
   else d.streak=Math.max(0,d.streak-1);
@@ -888,32 +1013,27 @@ function toggleDaily(id){
 // ══════════════════════════════════════════════════
 //  TODOS
 // ══════════════════════════════════════════════════
-const PRI_LABEL={h:'High',m:'Med',l:'Low'};
 function renderTodos(){
-  const body=document.getElementById('body-todos');
-  const addRow=document.getElementById('add-todos');
-  body.innerHTML='';body.appendChild(addRow);
+  const body=document.getElementById('body-todos');const ar=document.getElementById('add-todos');
+  body.innerHTML='';body.appendChild(ar);
   document.getElementById('cnt-todos').textContent=st.todos.filter(t=>!t.done).length;
   st.todos.forEach(t=>{
-    const stale=t.count>=3&&!t.done;
-    const el=document.createElement('div');
-    el.className=`todo-card ${t.pri}${t.done?' done':''}`;
-    el.innerHTML=`
-      <div class="td-check${t.done?' checked':''}" onclick="toggleTodo(${t.id})">${t.done?'✓':''}</div>
-      <div class="td-info">
-        <div class="td-name">${t.name}</div>
-        <div class="td-badges">
-          ${t.daysOld>0?`<span class="td-age">${t.daysOld}d old</span>`:`<span class="td-age" style="color:var(--green)">New</span>`}
-          <span class="td-pri ${t.pri}">${PRI_LABEL[t.pri]}</span>
-          ${stale?`<button class="n8n-btn" onclick="openN8n(${t.id})">⚡ n8n</button>`:''}
-          ${t.count>=3?`<span style="font-size:0.68rem;color:var(--text3);font-family:var(--mono)">×${t.count}</span>`:''}
-        </div>
-      </div>
-      <button class="del-btn" onclick="delItem('todos',${t.id})">×</button>`;
+    const stale=(t.count>=3&&!t.done)||t.wfType;
+    const el=document.createElement('div');el.className=`todo-card ${t.pri}${t.done?' done':''}`;
+    const wfLabel=t.wfType==='leadgen'?'Lead Gen':t.wfType==='insights'?'Insights':null;
+    const wfBadge=stale?`<button class="n8n-btn" onclick="openN8n(${t.id})" title="${wfLabel?'Deploy '+wfLabel+' workflow':'Automate'}">⚡ ${wfLabel||'n8n'}</button>`:'';
+    el.innerHTML=`<div class="td-check${t.done?' checked':''}" onclick="toggleTodo(${t.id})">${t.done?'✓':''}</div>
+    <div class="td-info"><div class="td-name">${t.name}</div>
+    <div class="td-badges">
+      ${t.daysOld>0?`<span class="td-age">${t.daysOld}d old</span>`:`<span class="td-age" style="color:var(--green)">New</span>`}
+      <span class="td-pri ${t.pri}">${PRI_LABEL[t.pri]}</span>
+      ${wfBadge}
+      ${t.count>=3?`<span style="font-size:0.68rem;color:var(--text3);font-family:var(--mono)">×${t.count}</span>`:''}
+    </div></div>
+    <button class="del-btn" onclick="delItem('todos',${t.id})">×</button>`;
     body.appendChild(el);
   });
 }
-
 function toggleTodo(id){
   const t=st.todos.find(x=>x.id===id);if(!t)return;
   t.done=!t.done;
@@ -922,7 +1042,7 @@ function toggleTodo(id){
     const xpMap={h:25,m:15,l:10};
     gainXP(xpMap[t.pri]);gainCoins(xpMap[t.pri]);
     toast(`✓ ${t.name.slice(0,30)} +${xpMap[t.pri]} XP`,'xp');
-    if(t.count>=3)triggerN8nSuggestion(t.id,'todo',t.name);
+    if(t.count>=3&&!t.wfType){openN8n(t.id);}
   }
   renderTodos();renderHeader();
 }
@@ -931,26 +1051,21 @@ function toggleTodo(id){
 //  REWARDS
 // ══════════════════════════════════════════════════
 function renderRewards(){
-  const body=document.getElementById('body-rewards');
-  const addRow=document.getElementById('add-rewards');
-  body.innerHTML='';body.appendChild(addRow);
+  const body=document.getElementById('body-rewards');const ar=document.getElementById('add-rewards');
+  body.innerHTML='';body.appendChild(ar);
   document.getElementById('cnt-rewards').textContent=st.rewards.length;
   st.rewards.forEach(r=>{
     const can=st.coins>=r.cost;
-    const el=document.createElement('div');
-    el.className='reward-card';
-    el.innerHTML=`
-      <div class="r-cost"><div class="r-coin"></div><span class="r-amount">${r.cost}</span></div>
-      <div class="r-name">${r.name}</div>
-      <button class="buy-btn" ${can?'':'disabled'} onclick="buyReward(${r.id})">${can?'Buy':'Need GP'}</button>`;
+    const el=document.createElement('div');el.className='reward-card';
+    el.innerHTML=`<div class="r-cost"><div class="r-coin"></div><span class="r-amount">${r.cost}</span></div>
+    <div class="r-name">${r.name}</div>
+    <button class="buy-btn" ${can?'':'disabled'} onclick="buyReward(${r.id})">${can?'Buy':'Need GP'}</button>`;
     body.appendChild(el);
   });
 }
-
 function buyReward(id){
   const r=st.rewards.find(x=>x.id===id);if(!r||st.coins<r.cost)return;
-  st.coins-=r.cost;
-  toast(`Reward unlocked: ${r.name} 🎉`,'success');
+  st.coins-=r.cost;toast(`Reward unlocked: ${r.name} 🎉`,'success');
   renderRewards();renderHeader();
 }
 
@@ -963,218 +1078,280 @@ function toggleAdd(col){
   row.style.display=vis?'none':'flex';
   if(!vis)document.getElementById('inp-'+col).focus();
 }
-
 function addTask(col){
-  const inp=document.getElementById('inp-'+col);
-  const val=inp.value.trim();if(!val)return;
+  const inp=document.getElementById('inp-'+col);const val=inp.value.trim();if(!val)return;
   const id=++st.nextId;
-  if(col==='habits'){
-    const cat=document.getElementById('sel-habits').value;
-    st.habits.push({id,name:val,cat,streak:0,count:0});
-  } else if(col==='dailies'){
-    st.dailies.push({id,name:val,cat:'backend',done:false,streak:0,timer:'30m'});
-  } else if(col==='todos'){
-    const pri=document.getElementById('sel-todos').value;
-    st.todos.push({id,name:val,pri,done:false,daysOld:0,count:0});
-  } else if(col==='rewards'){
-    const cost=parseInt(document.getElementById('inp-rewards-cost').value)||30;
-    st.rewards.push({id,name:val,cost});
-  }
-  inp.value='';
-  document.getElementById('add-'+col).style.display='none';
+  if(col==='habits'){const cat=document.getElementById('sel-habits').value;st.habits.push({id,name:val,cat,streak:0,count:0});}
+  else if(col==='dailies'){st.dailies.push({id,name:val,cat:'backend',done:false,streak:0,timer:'30m'});}
+  else if(col==='todos'){const pri=document.getElementById('sel-todos').value;st.todos.push({id,name:val,pri,done:false,daysOld:0,count:0});}
+  else if(col==='rewards'){const cost=parseInt(document.getElementById('inp-rewards-cost').value)||30;st.rewards.push({id,name:val,cost});}
+  inp.value='';document.getElementById('add-'+col).style.display='none';
   renderAll();toast('Task added 📋');
 }
-
-function delItem(col,id){
-  st[col]=st[col].filter(x=>x.id!==id);
-  renderAll();toast('Removed','warn');
-}
+function delItem(col,id){st[col]=st[col].filter(x=>x.id!==id);renderAll();}
 
 // ══════════════════════════════════════════════════
-//  XP / COINS / LEVELLING
+//  XP / COINS
 // ══════════════════════════════════════════════════
-function gainXP(n,showToast=true){
-  st.xp+=n;
-  const lvl=Math.floor(st.xp/100)+1;
-  if(lvl>st.level){
-    st.level=lvl;
-    if(st.level%10===0) openMilestone();
-    else toast(`🎉 Level Up! You are now LVL ${st.level}!`,'success');
-  }
+function gainXP(n,doToast=true){
+  st.xp+=n;const lvl=Math.floor(st.xp/100)+1;
+  if(lvl>st.level){st.level=lvl;if(st.level%10===0)openMilestone();else toast(`🎉 Level Up! LVL ${st.level}!`,'success');}
   renderHeader();
 }
 function gainCoins(n){st.coins+=n;renderHeader();}
 
 // ══════════════════════════════════════════════════
-//  N8N
+//  N8N MODAL — with workflow-type routing
 // ══════════════════════════════════════════════════
-function triggerN8nSuggestion(taskId,type,name){
-  if(st.workflows.find(w=>w.taskId===taskId&&w.taskType===type))return;
-  toast(`⚡ "${name}" — n8n automation available!`,'warn');
-}
-
 function openN8n(todoId){
   const t=st.todos.find(x=>x.id===todoId);if(!t)return;
   st.activeN8nTask=t;
-  document.getElementById('n8n-task-name').textContent=t.name;
+
+  // Reset modal
   document.getElementById('n8n-main').style.display='block';
   document.getElementById('n8n-success').classList.remove('show');
+  document.getElementById('n8n-task-name').textContent=t.name;
+
+  if(t.wfType==='leadgen'){
+    // Lead Gen — show specific diagram
+    document.getElementById('n8n-modal-title').textContent='📋 Deploy Lead Gen & Outreach';
+    document.getElementById('n8n-wf-label').textContent='Lead Gen & Outreach Workflow';
+    document.getElementById('n8n-wf-diagram').innerHTML=`
+      <div class="wf-node trigger"><small>Trigger</small>Form Submit</div>
+      <div class="wf-arr">→</div>
+      <div class="wf-node ai"><small>AI Agent</small>Generate Summary</div>
+      <div class="wf-arr">→</div>
+      <div class="wf-node ai" style="border-color:var(--pink);color:var(--pink);background:rgba(219,39,119,0.05)"><small>AI Agent</small>Generate Email</div>
+      <div class="wf-arr">→</div>
+      <div class="wf-node trigger" style="border-color:#ea4335;color:#ea4335;background:rgba(234,67,53,0.05)"><small>Gmail</small>Human Approval</div>
+      <div class="wf-arr">→</div>
+      <div class="wf-node action"><small>Action</small>Send Outreach</div>`;
+    document.getElementById('n8n-action-sec').textContent='Outreach channel';
+    document.getElementById('n8n-action-grid').innerHTML=`
+      <div class="action-opt sel" data-act="gmail" onclick="pickAction(this)"><span class="action-opt-icon">📧</span><div class="action-opt-label">Gmail Outreach</div><div class="action-opt-desc">Send via Gmail API</div></div>
+      <div class="action-opt" data-act="sheet" onclick="pickAction(this)"><span class="action-opt-icon">📊</span><div class="action-opt-label">Append to Sheet</div><div class="action-opt-desc">Google Sheets CRM</div></div>
+      <div class="action-opt" data-act="slack" onclick="pickAction(this)"><span class="action-opt-icon">💬</span><div class="action-opt-label">Slack Notify</div><div class="action-opt-desc">Alert sales channel</div></div>`;
+    document.getElementById('n8n-deploy-btn').textContent='🚀 Deploy Lead Gen Workflow';
+  } else if(t.wfType==='insights'){
+    // Customer Insights
+    document.getElementById('n8n-modal-title').textContent='🔍 Deploy Customer Insights';
+    document.getElementById('n8n-wf-label').textContent='Customer Insights Workflow';
+    document.getElementById('n8n-wf-diagram').innerHTML=`
+      <div class="wf-node trigger"><small>Input</small>Get Reviews</div>
+      <div class="wf-arr">→</div>
+      <div class="wf-node ai" style="border-color:var(--yellow);color:var(--yellow);background:rgba(217,119,6,0.05)"><small>ML</small>K-means Clusters</div>
+      <div class="wf-arr">→</div>
+      <div class="wf-node ai"><small>AI Agent</small>Insights Agent</div>
+      <div class="wf-arr">→</div>
+      <div class="wf-node action"><small>Output</small>GSheets</div>`;
+    document.getElementById('n8n-action-sec').textContent='Insights destination';
+    document.getElementById('n8n-action-grid').innerHTML=`
+      <div class="action-opt sel" data-act="gsheets" onclick="pickAction(this)"><span class="action-opt-icon">📊</span><div class="action-opt-label">Google Sheets</div><div class="action-opt-desc">Append insight rows</div></div>
+      <div class="action-opt" data-act="slack" onclick="pickAction(this)"><span class="action-opt-icon">💬</span><div class="action-opt-label">Slack Report</div><div class="action-opt-desc">Post digest to channel</div></div>
+      <div class="action-opt" data-act="email" onclick="pickAction(this)"><span class="action-opt-icon">📧</span><div class="action-opt-label">Email Summary</div><div class="action-opt-desc">Weekly email report</div></div>`;
+    document.getElementById('n8n-deploy-btn').textContent='🚀 Deploy Customer Insights Workflow';
+  } else {
+    // Generic
+    document.getElementById('n8n-modal-title').textContent='⚡ Automate with n8n';
+    document.getElementById('n8n-wf-label').textContent='Suggested workflow';
+    document.getElementById('n8n-wf-diagram').innerHTML=`
+      <div class="wf-node trigger"><small>Trigger</small>Completed 3+ times</div>
+      <div class="wf-arr">→</div>
+      <div class="wf-node ai"><small>AI Engine</small>VoxOps COO Core</div>
+      <div class="wf-arr">→</div>
+      <div class="wf-node action"><small>Action</small><span id="n8n-action-lbl">Slack Ping</span></div>`;
+    document.getElementById('n8n-action-sec').textContent='Choose automation action';
+    document.getElementById('n8n-action-grid').innerHTML=`
+      <div class="action-opt sel" data-act="slack" onclick="pickAction(this)"><span class="action-opt-icon">💬</span><div class="action-opt-label">Slack Ping</div><div class="action-opt-desc">Notify channel daily</div></div>
+      <div class="action-opt" data-act="email" onclick="pickAction(this)"><span class="action-opt-icon">📧</span><div class="action-opt-label">Email Digest</div><div class="action-opt-desc">Morning summary email</div></div>
+      <div class="action-opt" data-act="calendar" onclick="pickAction(this)"><span class="action-opt-icon">📅</span><div class="action-opt-label">Calendar Block</div><div class="action-opt-desc">Auto-schedule focus block</div></div>`;
+    document.getElementById('n8n-deploy-btn').textContent='🚀 Deploy Workflow';
+  }
   document.querySelectorAll('.action-opt').forEach((o,i)=>o.classList.toggle('sel',i===0));
-  document.getElementById('n8n-action-lbl').textContent='Slack Ping';
   openModal('n8n-modal');
 }
 
 function pickAction(el){
-  document.querySelectorAll('.action-opt').forEach(o=>o.classList.remove('sel'));
+  document.querySelectorAll('#n8n-action-grid .action-opt').forEach(o=>o.classList.remove('sel'));
   el.classList.add('sel');
-  const labels={slack:'Slack Ping',email:'Email Digest',calendar:'Calendar Block'};
-  document.getElementById('n8n-action-lbl').textContent=labels[el.dataset.act]||el.dataset.act;
 }
 
 function deployN8n(){
-  const act=document.querySelector('.action-opt.sel')?.dataset.act||'slack';
+  const act=document.querySelector('#n8n-action-grid .action-opt.sel')?.dataset.act||'slack';
   const t=st.activeN8nTask;
-  if(t) createWorkflow(t,act);
-  renderWorkflows();
-  const subs={
-    slack:'Slack reminder will fire daily at 9am with task context.',
-    email:'Morning email digest includes this task + blockers.',
-    calendar:'30-min focus block auto-created in your calendar.'
-  };
-  document.getElementById('n8n-success-sub').innerHTML=`${subs[act]||''}<br/><b>+150 XP · +50 GP earned</b>`;
+  if(!t)return;
+
+  if(t.wfType==='leadgen'){
+    markCanvasDeployed('leadgen');
+    const subs={gmail:'Gmail outreach firing on approval. Google Sheets CRM updated automatically.',sheet:'All lead data appending to CRM sheet. Outreach tracked.',slack:'Sales channel notified on each new qualified lead.'};
+    document.getElementById('n8n-success-sub').innerHTML=`Lead Gen & Outreach is live!<br/>${subs[act]||''}<br/><b>+200 XP · +75 GP earned</b>`;
+    gainXP(20);gainCoins(75);
+  } else if(t.wfType==='insights'){
+    markCanvasDeployed('insights');
+    const subs={gsheets:'Insights appending to Google Sheets after each K-means run.',slack:'Weekly insights digest posted to Slack channel.',email:'Email report sent every Monday morning.'};
+    document.getElementById('n8n-success-sub').innerHTML=`Customer Insights is live!<br/>${subs[act]||''}<br/><b>+180 XP · +60 GP earned</b>`;
+    gainXP(18);gainCoins(60);
+  } else {
+    createWorkflow(t,act);
+    renderWorkflows();
+    const subs={slack:'Slack reminder will fire daily at 9am with task context.',email:'Morning email digest includes this task + blockers.',calendar:'30-min focus block auto-created in your calendar.'};
+    document.getElementById('n8n-success-sub').innerHTML=`${subs[act]||''}<br/><b>+150 XP · +30 GP earned</b>`;
+    gainXP(15);gainCoins(30);
+  }
   document.getElementById('n8n-main').style.display='none';
   document.getElementById('n8n-success').classList.add('show');
-  gainXP(15);gainCoins(50);
-  toast('⚡ Workflow deployed! +50 GP','success');
+  toast('⚡ Workflow deployed! 🚀','success');
 }
 
-function createWorkflow(task,action){
-  const actions={
-    slack:['log_event','send_slack_notification','update_task_status'],
-    email:['log_event','compose_email_digest','send_email','mark_notified'],
-    calendar:['log_event','find_free_slot','create_calendar_block','notify_user'],
-  };
-  st.workflows.push({
-    id:++st.nextId, taskId:task.id, taskName:task.name||task.title,
-    taskType:task.pri?'todo':'habit',
-    trigger:'task completed 3+ times',
-    action,
-    actions:actions[action]||actions.slack,
-    status:'deployed',
-    createdAt:new Date().toLocaleString()
+function deployCanvasWorkflow(type,btn){
+  if(st.canvasDeployed[type])return;
+  markCanvasDeployed(type);
+  const msgs={leadgen:'Lead Gen & Outreach deployed! +200 XP 🚀',insights:'Customer Insights deployed! +180 XP 🔍'};
+  const xps={leadgen:20,insights:18};
+  const gps={leadgen:75,insights:60};
+  toast(msgs[type]||'Deployed!','success');
+  gainXP(xps[type]||10);gainCoins(gps[type]||30);
+}
+
+function markCanvasDeployed(type){
+  if(st.canvasDeployed[type])return;
+  st.canvasDeployed[type]=true;
+  // Update badge
+  const badge=document.getElementById('badge-'+type);
+  if(badge){badge.textContent='Deployed ✓';badge.className='wf-section-badge deployed';}
+  // Update deploy buttons
+  ['deploy-btn-'+type].forEach(id=>{
+    const b=document.getElementById(id);
+    if(b){b.textContent='✓ Deployed';b.className='canvas-deploy-btn deployed-state';}
+  });
+  document.querySelectorAll(`[onclick*="deployCanvasWorkflow('${type}"]`).forEach(b=>{
+    b.textContent='✓ Live';b.disabled=true;
   });
 }
 
-// ══════════════════════════════════════════════════
-//  WORKFLOWS PAGE
-// ══════════════════════════════════════════════════
+function createWorkflow(task,action){
+  const actions={slack:['log_event','send_slack_notification','update_task_status'],email:['log_event','compose_email_digest','send_email','mark_notified'],calendar:['log_event','find_free_slot','create_calendar_block','notify_user']};
+  st.workflows.push({id:++st.nextId,taskId:task.id,taskName:task.name||task.title,taskType:task.pri?'todo':'habit',trigger:'task completed 3+ times',action,actions:actions[action]||actions.slack,status:'deployed',createdAt:new Date().toLocaleString()});
+}
+
 function renderWorkflows(){
   const list=document.getElementById('wf-list');
+  const sec=document.getElementById('wf-user-section');
   if(!list)return;
   list.innerHTML='';
-  if(st.workflows.length===0){
-    list.innerHTML=`<div class="wf-empty"><div class="wf-empty-icon">⚡</div><div class="wf-empty-title">No workflows yet</div><div>Complete tasks 3+ times to trigger automation suggestions</div></div>`;
-    return;
-  }
+  if(st.workflows.length===0){if(sec)sec.style.display='none';return;}
+  if(sec)sec.style.display='block';
   const actionIcons={slack:'💬',email:'📧',calendar:'📅'};
   st.workflows.forEach(w=>{
-    const el=document.createElement('div');
-    el.className='wf-card';
-    el.innerHTML=`
-      <div class="wf-header">
-        <div class="wf-title">${actionIcons[w.action]||'⚡'} ${w.taskName}</div>
-        <span class="wf-status ${w.status}">${w.status}</span>
-      </div>
-      <div class="wf-trigger-row">
-        <span class="wf-trigger-label">Trigger</span>
-        <span class="wf-trigger-val">${w.trigger}</span>
-      </div>
-      <div class="wf-actions-label">Actions</div>
-      <div class="wf-actions-list">
-        ${w.actions.map(a=>`<div class="wf-action-tag"><div class="wf-act-dot"></div>${a}</div>`).join('')}
-      </div>
-      <div class="wf-meta">Task type: ${w.taskType} · Created: ${w.createdAt} · Trigger count: 3+</div>`;
+    const el=document.createElement('div');el.className='wf-card';
+    el.innerHTML=`<div class="wf-header"><div class="wf-title">${actionIcons[w.action]||'⚡'} ${w.taskName}</div><span class="wf-status ${w.status}">${w.status}</span></div>
+    <div class="wf-trigger-row"><span class="wf-trigger-label">Trigger</span><span class="wf-trigger-val">${w.trigger}</span></div>
+    <div class="wf-actions-label">Actions</div>
+    <div class="wf-actions-list">${w.actions.map(a=>`<div class="wf-action-tag"><div class="wf-act-dot"></div>${a}</div>`).join('')}</div>
+    <div class="wf-meta">Type: ${w.taskType} · Created: ${w.createdAt}</div>`;
     list.appendChild(el);
   });
 }
 
 // ══════════════════════════════════════════════════
-//  TEAM DASHBOARD
+//  TEAM
 // ══════════════════════════════════════════════════
 function renderTeam(){
-  // Activity
   const act=document.getElementById('team-activity');
-  if(act){
-    act.innerHTML='';
-    st.teamActivity.forEach(a=>{
-      const el=document.createElement('div');
-      el.className='activity-item';
-      el.innerHTML=`
-        <div class="act-avatar" style="background:${a.color}">${a.user[0]}</div>
-        <div class="act-text"><b>${a.user}</b> ${a.action}${a.xp>0?` <span style="color:var(--px);font-size:0.75rem;font-weight:700">+${a.xp} XP</span>`:''}</div>
-        <div class="act-time">${a.time}</div>`;
-      act.appendChild(el);
-    });
-  }
-  // Members
+  if(act){act.innerHTML='';st.teamActivity.forEach(a=>{const el=document.createElement('div');el.className='activity-item';el.innerHTML=`<div class="act-avatar" style="background:${a.color}">${a.user[0]}</div><div class="act-text"><b>${a.user}</b> ${a.action}${a.xp>0?` <span style="color:var(--px);font-size:0.75rem;font-weight:700">+${a.xp} XP</span>`:''}</div><div class="act-time">${a.time}</div>`;act.appendChild(el);});}
   const members=document.getElementById('team-members');
-  if(members){
-    members.innerHTML='';
-    TEAM_CHARS.forEach(c=>{
-      const el=document.createElement('div');
-      el.className='activity-item';
-      el.innerHTML=`
-        <div style="flex-shrink:0">${makeFig(c,3)}</div>
-        <div class="act-text"><b>${c.me?st.user.split(' ')[0]:c.name}</b><br/><span style="font-size:0.75rem;color:var(--text3);">LVL ${c.lvl} · Backend Dev</span></div>
-        <div class="act-time"><span class="td-pri h" style="font-size:0.7rem;padding:2px 6px;background:rgba(5,150,105,0.1);color:var(--green);font-weight:700">Active</span></div>`;
-      members.appendChild(el);
-    });
-  }
-  // Team tasks
+  if(members){members.innerHTML='';TEAM_CHARS.forEach(c=>{const el=document.createElement('div');el.className='activity-item';el.innerHTML=`<div style="flex-shrink:0">${makeFig(c,3)}</div><div class="act-text"><b>${c.me?st.user.split(' ')[0]:c.name}</b><br/><span style="font-size:0.75rem;color:var(--text3);">LVL ${c.lvl} · Backend Dev</span></div><div class="act-time"><span style="font-size:0.7rem;padding:2px 6px;background:rgba(5,150,105,0.1);color:var(--green);font-weight:700">Active</span></div>`;members.appendChild(el);});}
   const tasks=document.getElementById('team-tasks');
-  if(tasks){
-    tasks.innerHTML='';
-    st.teamTasks.forEach(t=>{
-      const el=document.createElement('div');
-      el.className='team-task-item';
-      const priColor={h:'var(--red)',m:'var(--yellow)',l:'var(--cyan)'};
-      el.innerHTML=`
-        <div class="tt-check" style="${t.done?'background:var(--green);border-color:var(--green)':''}"></div>
-        <div class="tt-name" style="${t.done?'text-decoration:line-through;color:var(--text3)':''}">${t.name}</div>
-        <div class="tt-owner" style="color:var(--text3);">@${t.owner}</div>
-        <span class="tt-pri" style="background:rgba(0,0,0,0.06);color:${priColor[t.pri]};font-size:0.65rem;padding:2px 6px;border-radius:4px;font-weight:700">${PRI_LABEL[t.pri]}</span>`;
-      tasks.appendChild(el);
-    });
-  }
+  if(tasks){tasks.innerHTML='';const priColor={h:'var(--red)',m:'var(--yellow)',l:'var(--cyan)'};st.teamTasks.forEach(t=>{const el=document.createElement('div');el.className='team-task-item';el.innerHTML=`<div class="tt-check" style="${t.done?'background:var(--green);border-color:var(--green)':''}"></div><div class="tt-name" style="${t.done?'text-decoration:line-through;color:var(--text3)':''}">${t.name}</div><div class="tt-owner" style="color:var(--text3);">@${t.owner}</div><span class="tt-pri" style="background:rgba(0,0,0,0.06);color:${priColor[t.pri]};font-size:0.65rem;padding:2px 6px;border-radius:4px;font-weight:700">${PRI_LABEL[t.pri]}</span>`;tasks.appendChild(el);});}
 }
-
 function addTeamTask(){
-  const inp=document.getElementById('team-task-inp');
-  const val=inp.value.trim();if(!val)return;
+  const inp=document.getElementById('team-task-inp');const val=inp.value.trim();if(!val)return;
   const pri=document.getElementById('team-task-pri').value;
   st.teamTasks.push({id:++st.nextId,name:val,pri,owner:st.user.split(' ')[0],done:false});
   st.teamActivity.unshift({user:st.user.split(' ')[0],action:`added "${val}" to team board`,xp:0,time:'just now',color:'#1E3A5F'});
-  inp.value='';
-  renderTeam();toast('Team task added 📋','success');
+  inp.value='';renderTeam();toast('Team task added 📋','success');
 }
 
 // ══════════════════════════════════════════════════
-//  VOICE INPUT
+//  VOICE — animated transcription
 // ══════════════════════════════════════════════════
-const VOICE_TASKS=[
-  {name:'Implement JWT refresh token endpoint',col:'todos',pri:'h'},
-  {name:'Write SQL migration for users table',col:'habits',cat:'sql'},
-  {name:'Debug GraphQL resolver N+1 issue',col:'todos',pri:'m'},
-  {name:'Set up Redis caching layer',col:'todos',pri:'h'},
-  {name:'Review backend PR #147',col:'dailies'},
+const VOICE_SCRIPTS=[
+  {transcript:'Set up lead gen and outreach pipeline using n8n, Apify and OpenAI',task:{name:'Set up Lead Gen & Outreach automation pipeline',col:'todos',pri:'h',wfType:'leadgen'}},
+  {transcript:'Build customer insights pipeline from review data using K-means clustering and OpenAI agent',task:{name:'Build Customer Insights pipeline from review data',col:'todos',pri:'h',wfType:'insights'}},
+  {transcript:'Implement JWT refresh token endpoint for backend authentication',task:{name:'Implement JWT refresh token endpoint',col:'todos',pri:'h'}},
+  {transcript:'Write SQL migration script for users table version three',task:{name:'Write SQL migration for users table v3',col:'habits',cat:'sql'}},
+  {transcript:'Debug GraphQL resolver N plus one query issue in production',task:{name:'Debug GraphQL resolver N+1 issue',col:'todos',pri:'m'}},
+  {transcript:'Set up Redis caching layer for session management',task:{name:'Set up Redis caching layer',col:'todos',pri:'h'}},
 ];
-function voiceInput(){
-  const pick=VOICE_TASKS[Math.floor(Math.random()*VOICE_TASKS.length)];
-  const id=++st.nextId;
-  if(pick.col==='habits')st.habits.push({id,name:pick.name,cat:pick.cat||'backend',streak:0,count:0});
-  else if(pick.col==='dailies')st.dailies.push({id,name:pick.name,cat:'backend',done:false,streak:0,timer:'30m'});
-  else st.todos.push({id,name:pick.name,pri:pick.pri||'m',done:false,daysOld:0,count:0});
-  renderAll();toast(`🎙️ Voice task added: "${pick.name.slice(0,40)}"`,'success');
+
+let voiceTimeout=null;
+let voiceAnimInterval=null;
+
+function startVoice(){
+  const overlay=document.getElementById('voice-overlay');
+  overlay.classList.add('show');
+  document.getElementById('voice-status').textContent='Listening...';
+  document.getElementById('voice-transcript').innerHTML='<span class="voice-transcript-cursor"></span>';
+
+  // Build waveform bars
+  const wf=document.getElementById('voice-waveform');
+  wf.innerHTML='';
+  const heights=[10,18,28,38,48,40,52,36,44,30,20,42,50,38,26,14,32,46,40,24];
+  heights.forEach((h,i)=>{
+    const bar=document.createElement('div');
+    bar.className='vw-bar';
+    bar.style.cssText=`--hh:${h}px;--dur:${0.5+Math.random()*0.5}s;--dly:${i*0.04}s;height:${h/2}px`;
+    wf.appendChild(bar);
+  });
+
+  // Pick random script
+  const script=VOICE_SCRIPTS[Math.floor(Math.random()*VOICE_SCRIPTS.length)];
+  const words=script.transcript.split(' ');
+  let wordIdx=0;
+  let displayed='';
+
+  // Short pause then start transcribing
+  voiceTimeout=setTimeout(()=>{
+    document.getElementById('voice-status').textContent='Transcribing...';
+
+    const intervalMs=180;
+    voiceAnimInterval=setInterval(()=>{
+      if(wordIdx>=words.length){
+        clearInterval(voiceAnimInterval);
+        document.getElementById('voice-status').textContent='Processing...';
+        // After brief pause, finalize
+        voiceTimeout=setTimeout(()=>finaliseVoice(script.task),700);
+        return;
+      }
+      displayed+=(wordIdx>0?' ':'')+words[wordIdx];
+      wordIdx++;
+      document.getElementById('voice-transcript').innerHTML=displayed+'<span class="voice-transcript-cursor"></span>';
+    },intervalMs);
+  },800);
+}
+
+function finaliseVoice(taskDef){
+  document.getElementById('voice-status').textContent='Task detected ✓';
+  voiceTimeout=setTimeout(()=>{
+    cancelVoice(false);
+    const id=++st.nextId;
+    if(taskDef.col==='habits') st.habits.push({id,name:taskDef.name,cat:taskDef.cat||'backend',streak:0,count:0});
+    else if(taskDef.col==='dailies') st.dailies.push({id,name:taskDef.name,cat:'backend',done:false,streak:0,timer:'30m'});
+    else{
+      const existing=st.todos.find(t=>t.name===taskDef.name);
+      if(!existing) st.todos.push({id,name:taskDef.name,pri:taskDef.pri||'m',done:false,daysOld:0,count:taskDef.wfType?3:0,wfType:taskDef.wfType||null});
+    }
+    renderAll();
+    toast(`🎙️ "${taskDef.name.slice(0,38)}..." added!`,'success');
+  },800);
+}
+
+function cancelVoice(doClean=true){
+  if(voiceTimeout)clearTimeout(voiceTimeout);
+  if(voiceAnimInterval)clearInterval(voiceAnimInterval);
+  voiceTimeout=null;voiceAnimInterval=null;
+  document.getElementById('voice-overlay').classList.remove('show');
+  if(doClean)document.getElementById('voice-transcript').innerHTML='<span class="voice-transcript-cursor"></span>';
 }
 
 // ══════════════════════════════════════════════════
@@ -1182,20 +1359,18 @@ function voiceInput(){
 // ══════════════════════════════════════════════════
 function openMilestone(){
   document.getElementById('ms-title').textContent=`LEVEL ${st.level} REACHED!`;
-  document.getElementById('ms-sub').textContent=`Amazing work hitting Level ${st.level}! You've earned a real-world reward. Set your incentive below to keep the momentum going.`;
+  document.getElementById('ms-sub').textContent=`Amazing work hitting Level ${st.level}! Set your incentive below to keep going.`;
   openModal('milestone-modal');
 }
 function saveMilestone(){
   const val=document.getElementById('ms-reward-input').value.trim();
   if(!val){toast('Enter a reward name!','warn');return;}
   st.rewards.push({id:++st.nextId,name:`🏆 Milestone LVL${st.level}: ${val}`,cost:0});
-  closeModal('milestone-modal');
-  renderRewards();
-  toast(`Reward saved: ${val} 🎯`,'success');
+  closeModal('milestone-modal');renderRewards();toast(`Reward saved: ${val} 🎯`,'success');
 }
 
 // ══════════════════════════════════════════════════
-//  PAGE NAVIGATION
+//  PAGE NAV + MODAL + TOAST
 // ══════════════════════════════════════════════════
 function showPage(page,btn){
   document.getElementById('p-board').style.display=page==='board'?'block':'none';
@@ -1206,49 +1381,32 @@ function showPage(page,btn){
   document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
   if(btn)btn.classList.add('active');
 }
-
-// ══════════════════════════════════════════════════
-//  MODAL HELPERS
-// ══════════════════════════════════════════════════
 function openModal(id){document.getElementById(id).classList.add('open');}
 function closeModal(id){document.getElementById(id).classList.remove('open');}
-document.querySelectorAll('.modal-overlay').forEach(m=>{
-  m.addEventListener('click',e=>{if(e.target===m)closeModal(m.id);});
-});
-
-// ══════════════════════════════════════════════════
-//  TOAST
-// ══════════════════════════════════════════════════
+document.querySelectorAll('.modal-overlay').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)closeModal(m.id);}));
 function toast(msg,type=''){
   const stack=document.getElementById('toast-stack');
-  const el=document.createElement('div');
-  el.className='toast'+(type?' '+type:'');
+  const el=document.createElement('div');el.className='toast'+(type?' '+type:'');
   const icons={xp:'⭐',success:'✅',warn:'⚠️',err:'❌'};
   el.innerHTML=`<span>${icons[type]||'ℹ️'}</span><span>${msg}</span>`;
-  stack.appendChild(el);
-  setTimeout(()=>el.remove(),3200);
+  stack.appendChild(el);setTimeout(()=>el.remove(),3200);
 }
 
 // ══════════════════════════════════════════════════
-//  LOGIN PAGE DECORATION
+//  LOGIN DECORATION
 // ══════════════════════════════════════════════════
 (function(){
-  // Hero figure for login
   document.getElementById('login-hero-fig').innerHTML=makeFig(TEAM_CHARS[0],5);
-  // Background figures
   const figs=document.getElementById('login-figs');
-  const bgs=[
-    {hair:'#1a1a1a',torso:'#1a3a1a',legs:'#374151',tie:'#DC2626',glasses:false,accessory:'briefcase'},
-    {hair:'#6B2D00',torso:'#4A1C4A',legs:'#374151',tie:'#DB2777',glasses:false,accessory:'phone'},
-    {hair:'#1a1a1a',torso:'#1E3A5F',legs:'#1a1a1a',tie:'#059669',glasses:true,hat:true,accessory:'briefcase'},
-    {hair:'#3D2B1F',torso:'#7C2D12',legs:'#374151',tie:'#D97706',glasses:false,accessory:'laptop'},
-    {hair:'#1a1a1a',torso:'#312E81',legs:'#1E3A5F',tie:'#8B5CF6',glasses:false,accessory:'phone'},
-  ];
-  bgs.forEach((c,i)=>{
+  [{hair:'#1a1a1a',torso:'#1a3a1a',legs:'#374151',tie:'#DC2626',glasses:false,accessory:'briefcase'},
+   {hair:'#6B2D00',torso:'#4A1C4A',legs:'#374151',tie:'#DB2777',glasses:false,accessory:'phone'},
+   {hair:'#1a1a1a',torso:'#1E3A5F',legs:'#1a1a1a',tie:'#059669',glasses:true,hat:true,accessory:'briefcase'},
+   {hair:'#3D2B1F',torso:'#7C2D12',legs:'#374151',tie:'#D97706',glasses:false,accessory:'laptop'},
+   {hair:'#1a1a1a',torso:'#312E81',legs:'#1E3A5F',tie:'#8B5CF6',glasses:false,accessory:'phone'},
+  ].forEach((c,i)=>{
     const w=document.createElement('div');
     w.style.cssText=`opacity:0.35;filter:grayscale(0.3);transform:scale(${0.8+i*0.05})`;
-    w.innerHTML=makeFig(c,6);
-    figs.appendChild(w);
+    w.innerHTML=makeFig(c,6);figs.appendChild(w);
   });
 })();
 </script>
